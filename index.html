@@ -6,7 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>依恋模式心理测评 | Attachment Style Assessment</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
 <style>
   :root {
     --mint-white: #F4F8F4;
@@ -32,7 +33,7 @@
 - { margin:0; padding:0; box-sizing:border-box; }
 
 body {
-font-family: ‘Noto Sans SC’, ‘Inter’, sans-serif;
+font-family: ‘Noto Sans SC’, ‘Inter’, -apple-system, BlinkMacSystemFont, ‘PingFang SC’, ‘Hiragino Sans GB’, ‘Microsoft YaHei’, sans-serif;
 background: var(–mint-white);
 color: var(–text-main);
 min-height: 100vh;
@@ -54,7 +55,7 @@ padding: 10px 24px;
 gap: 12px;
 }
 .lang-brand {
-font-family: ‘Noto Serif SC’, ‘Lora’, serif;
+font-family: ‘Noto Serif SC’, ‘Lora’, ‘Songti SC’, ‘SimSun’, Georgia, serif;
 font-size: 13px;
 color: var(–sage-dark);
 font-weight: 500;
@@ -105,7 +106,7 @@ position: relative;
 .cover-emblem svg { width: 100%; height: 100%; }
 
 .cover-title {
-font-family: ‘Noto Serif SC’, ‘Lora’, serif;
+font-family: ‘Noto Serif SC’, ‘Lora’, ‘Songti SC’, ‘SimSun’, Georgia, serif;
 font-size: clamp(26px, 5vw, 34px);
 font-weight: 600;
 color: var(–sage-dark);
@@ -114,7 +115,7 @@ margin-bottom: 10px;
 line-height: 1.4;
 }
 .cover-subtitle {
-font-family: ‘Lora’, serif;
+font-family: ‘Lora’, ‘Songti SC’, Georgia, serif;
 font-size: 15px;
 color: var(–warm-brown-light);
 font-style: italic;
@@ -131,7 +132,7 @@ margin-bottom: 28px;
 box-shadow: 0 4px 24px var(–shadow);
 }
 .cover-card h3 {
-font-family: ‘Noto Serif SC’, serif;
+font-family: ‘Noto Serif SC’, ‘Songti SC’, ‘SimSun’, Georgia, serif;
 font-size: 15px;
 color: var(–sage-dark);
 margin-bottom: 14px;
@@ -241,7 +242,7 @@ margin-bottom: 12px;
 font-weight: 400;
 }
 .q-text {
-font-family: ‘Noto Serif SC’, serif;
+font-family: ‘Noto Serif SC’, ‘Songti SC’, ‘SimSun’, Georgia, serif;
 font-size: 17px;
 color: var(–text-main);
 font-weight: 400;
@@ -357,7 +358,7 @@ display: flex; align-items: center; justify-content: center;
 font-size: 36px;
 }
 .result-type-name {
-font-family: ‘Noto Serif SC’, serif;
+font-family: ‘Noto Serif SC’, ‘Songti SC’, ‘SimSun’, Georgia, serif;
 font-size: clamp(22px, 4vw, 28px);
 color: var(–sage-dark);
 font-weight: 600;
@@ -365,7 +366,7 @@ margin-bottom: 8px;
 letter-spacing: 0.03em;
 }
 .result-type-en {
-font-family: ‘Lora’, serif;
+font-family: ‘Lora’, ‘Songti SC’, Georgia, serif;
 font-size: 14px;
 color: var(–warm-brown-light);
 font-style: italic;
@@ -392,7 +393,7 @@ margin-bottom: 6px;
 font-weight: 400;
 }
 .score-box-value {
-font-family: ‘Lora’, serif;
+font-family: ‘Lora’, ‘Songti SC’, Georgia, serif;
 font-size: 28px;
 color: var(–sage-dark);
 font-weight: 500;
@@ -451,7 +452,7 @@ margin-bottom: 16px;
 box-shadow: 0 2px 12px var(–shadow);
 }
 .result-section h3 {
-font-family: ‘Noto Serif SC’, serif;
+font-family: ‘Noto Serif SC’, ‘Songti SC’, ‘SimSun’, Georgia, serif;
 font-size: 16px;
 color: var(–sage-dark);
 font-weight: 500;
@@ -532,7 +533,7 @@ color: var(–sage-light);
 opacity: 0.5;
 }
 .closing-card p {
-font-family: ‘Noto Serif SC’, serif;
+font-family: ‘Noto Serif SC’, ‘Songti SC’, ‘SimSun’, Georgia, serif;
 font-size: 15px;
 color: var(–warm-brown);
 line-height: 2;
@@ -712,7 +713,7 @@ line-height: 1.8;
 <div class="cover-card">
   <h3 id="intro-title">关于本测评</h3>
   <p id="intro-p1">本测评基于 <strong>ECR-R 亲密关系体验量表（修订版）</strong>，由 Fraley、Waller 与 Brennan 于 2000 年修订，是当前依恋研究中信效度最高的自评工具之一，被广泛应用于心理学研究与临床实践。</p>
-  <p id="intro-p2">测评共 <strong>36 题</strong>，约需 <strong>8–12 分钟</strong>。请依据您在<em>亲密关系（包括恋爱、深度友谊等）</em>中的真实感受作答，没有对错之分。</p>
+  <p id="intro-p2">测评共 <strong>36 题</strong>，约需 <strong>8--12 分钟</strong>。请依据您在<em>亲密关系（包括恋爱、深度友谊等）</em>中的真实感受作答，没有对错之分。</p>
   <p id="intro-p3">测评结果仅供自我探索参考，不构成临床诊断。</p>
   <div class="cover-tags">
     <span class="tag" id="tag1">📊 ECR-R 量表</span>
@@ -787,12 +788,12 @@ line-height: 1.8;
 <div class="scores-display">
   <div class="score-box">
     <div class="score-box-label" id="anxiety-label">焦虑维度</div>
-    <div class="score-box-value" id="anxiety-score">—</div>
+    <div class="score-box-value" id="anxiety-score">--</div>
     <div class="score-box-sub" id="anxiety-sub">/ 7.0 满分</div>
   </div>
   <div class="score-box">
     <div class="score-box-label" id="avoidance-label">回避维度</div>
-    <div class="score-box-value" id="avoidance-score">—</div>
+    <div class="score-box-value" id="avoidance-score">--</div>
     <div class="score-box-sub" id="avoidance-sub">/ 7.0 满分</div>
   </div>
 </div>
@@ -801,7 +802,7 @@ line-height: 1.8;
   <div class="dim-row">
     <div class="dim-label">
       <span class="dim-name" id="dim-anxiety-name">依恋焦虑</span>
-      <span class="dim-val" id="dim-anxiety-val">—</span>
+      <span class="dim-val" id="dim-anxiety-val">--</span>
     </div>
     <div class="dim-bar"><div class="dim-fill" id="dim-anxiety-fill" style="width:0%"></div></div>
     <div class="dim-desc" id="dim-anxiety-desc">对关系中被遗弃或不被爱的担忧程度</div>
@@ -809,7 +810,7 @@ line-height: 1.8;
   <div class="dim-row">
     <div class="dim-label">
       <span class="dim-name" id="dim-avoidance-name">依恋回避</span>
-      <span class="dim-val" id="dim-avoidance-val">—</span>
+      <span class="dim-val" id="dim-avoidance-val">--</span>
     </div>
     <div class="dim-bar"><div class="dim-fill" id="dim-avoidance-fill" style="width:0%"></div></div>
     <div class="dim-desc" id="dim-avoidance-desc">在亲密关系中对依赖他人的回避程度</div>
@@ -985,7 +986,7 @@ const LANG = {
     coverSubtitle: 'Attachment Style Assessment · ECR-R Scale',
     introTitle: '关于本测评',
     introP1: '本测评基于 <strong>ECR-R 亲密关系体验量表（修订版）</strong>，由 Fraley、Waller 与 Brennan 于 2000 年修订，是当前依恋研究中信效度最高的自评工具之一，被广泛应用于心理学研究与临床实践。',
-    introP2: '测评共 <strong>36 题</strong>，约需 <strong>8–12 分钟</strong>。请依据您在<em>亲密关系（包括恋爱、深度友谊等）</em>中的真实感受作答，没有对错之分。',
+    introP2: '测评共 <strong>36 题</strong>，约需 <strong>8--12 分钟</strong>。请依据您在<em>亲密关系（包括恋爱、深度友谊等）</em>中的真实感受作答，没有对错之分。',
     introP3: '测评结果仅供自我探索参考，不构成临床诊断。',
     tag1: '📊 ECR-R 量表', tag2: '🔬 信效度验证', tag3: '36 题 · 约10分钟', tag4: '🔒 隐私保护',
     btnStart: '开始测评 →',
@@ -1030,7 +1031,7 @@ const LANG = {
       secure: {
         name: '安全型依恋', en: 'Secure Attachment', icon: '🌿',
         overview: [
-          '你展现出<strong>安全型依恋</strong>的特征——这是四种依恋类型中最有助于建立健康亲密关系的模式。',
+          '你展现出<strong>安全型依恋</strong>的特征----这是四种依恋类型中最有助于建立健康亲密关系的模式。',
           '安全型依恋者通常在早年建立了稳固的情感基础，能够在亲密与独立之间取得良好的平衡。你大体上相信他人是可信赖的，也相信自己是值得被爱的。在关系中，你既能够给予温暖的支持，也能在需要时明确表达自身的需求。',
           '研究表明（Mikulincer & Shaver, 2007），安全型个体在亲密关系中满意度更高、冲突解决能力更强、情绪调节也更为灵活。这并不意味着你没有挑战，而是你拥有一种内在资源，使你能更有弹性地应对关系中的困境。'
         ],
@@ -1052,14 +1053,14 @@ const LANG = {
           { title: '持续滋养关系', body: '安全型的人有时会因为"关系感觉还不错"就减少对关系的用心投入。记得定期和重要的人分享内心，保持深度联结的流动。' },
           { title: '用你的安全感帮助他人', body: '研究发现，安全型伴侣能够帮助焦虑型或回避型伴侣逐渐"习得安全"。你的稳定与温暖，本身就是一种疗愈的力量。' },
         ],
-        closing: '无论测评结果如何，你的故事都是独一无二的。安全感不是一成不变的状态，它可以在生命中不断被发展与深化。愿你继续带着好奇与温柔，探索自己内心的那片风景——那里永远值得被温柔以待。🌿'
+        closing: '无论测评结果如何，你的故事都是独一无二的。安全感不是一成不变的状态，它可以在生命中不断被发展与深化。愿你继续带着好奇与温柔，探索自己内心的那片风景----那里永远值得被温柔以待。🌿'
       },
       anxious: {
         name: '焦虑型依恋', en: 'Anxious Attachment', icon: '🌊',
         overview: [
-          '你的测评结果显示出<strong>焦虑型依恋</strong>的特征——这是一种在亲密关系中倾向于高度渴望联结、同时容易担忧失去的依恋模式。',
-          '焦虑型依恋通常与早期照顾者的回应不一致有关——时而温暖亲近，时而疏远冷漠，使孩子学会了通过"更强烈地表达需求"来试图维系联结。这不是你的错，而是你的内心发展出的一种聪明的应对策略。',
-          '在成年关系中，这种模式表现为：对亲密的强烈渴望、对被抛弃的深切恐惧、在关系中情绪波动较大。研究（Mikulincer & Shaver, 2016）显示，焦虑型个体的情感感知能力往往极为丰富——这同时也是你的一种天赋。'
+          '你的测评结果显示出<strong>焦虑型依恋</strong>的特征----这是一种在亲密关系中倾向于高度渴望联结、同时容易担忧失去的依恋模式。',
+          '焦虑型依恋通常与早期照顾者的回应不一致有关----时而温暖亲近，时而疏远冷漠，使孩子学会了通过"更强烈地表达需求"来试图维系联结。这不是你的错，而是你的内心发展出的一种聪明的应对策略。',
+          '在成年关系中，这种模式表现为：对亲密的强烈渴望、对被抛弃的深切恐惧、在关系中情绪波动较大。研究（Mikulincer & Shaver, 2016）显示，焦虑型个体的情感感知能力往往极为丰富----这同时也是你的一种天赋。'
         ],
         strengths: [
           '情感感知细腻，能深刻体会他人的情绪状态',
@@ -1079,15 +1080,15 @@ const LANG = {
           { title: '建立内在的安全感', body: '尝试发展与自己的联结，探索让自己感到平静和踏实的事物（比如冥想、写日记、艺术创作）。内在的稳定感可以减少对外部确认的依赖。' },
           { title: '学习识别焦虑的触发点', body: '当焦虑来临时，先问自己："这种感受是对眼前实际情况的反应，还是内心旧日模式的声音？"区分当下现实与内心投射，能帮助你更清晰地回应。' },
           { title: '练习直接、温和地表达需求', body: '当你渴望联结时，尝试用"我感到……我希望……"的方式直接表达，而非通过间接行为来测试对方。清晰的表达往往比"试探"更有效。' },
-          { title: '给自己和关系留有呼吸的空间', body: '亲密不等于融合。尝试培养自己的兴趣爱好和社交圈，不把所有情感需求都集中在一段关系上——这不仅对你有益，也会让关系更健康。' },
+          { title: '给自己和关系留有呼吸的空间', body: '亲密不等于融合。尝试培养自己的兴趣爱好和社交圈，不把所有情感需求都集中在一段关系上----这不仅对你有益，也会让关系更健康。' },
         ],
         closing: '高度的情感敏感并非缺陷，它是你对世界感知深度的体现。那些曾经让你感到不安全的经历，已经教会了你如何深刻地感受爱。现在，你正在学习的，是如何在爱中也感到安全。这条路或许需要时间，但你已经走在了正确的方向上。愿你温柔地对待内心那个渴望被爱的自己，她/他值得被深深地看见与拥抱。🌊'
       },
       avoidant: {
         name: '回避型依恋', en: 'Dismissing Avoidant', icon: '🍃',
         overview: [
-          '你的测评结果呈现出<strong>回避型依恋（疏离型）</strong>的特征——这是一种在亲密关系中倾向于保持情感距离、重视独立的依恋模式。',
-          '回避型依恋通常与早期照顾者较少回应情感需求有关——孩子学会了"不麻烦别人、靠自己"，将依赖的需求深藏起来。这是一种适应环境的智慧，只是在成年关系中，它有时会阻隔你体验更深度的联结。',
+          '你的测评结果呈现出<strong>回避型依恋（疏离型）</strong>的特征----这是一种在亲密关系中倾向于保持情感距离、重视独立的依恋模式。',
+          '回避型依恋通常与早期照顾者较少回应情感需求有关----孩子学会了"不麻烦别人、靠自己"，将依赖的需求深藏起来。这是一种适应环境的智慧，只是在成年关系中，它有时会阻隔你体验更深度的联结。',
           '研究（Fraley & Shaver, 2000）表明，回避型个体通常有较高的自我效能感和问题解决能力，独立性极强。同时，他们也具有情感需求，只是这些需求被放在了更深的地方，不容易被察觉。'
         ],
         strengths: [
@@ -1105,18 +1106,18 @@ const LANG = {
           '情感需求有时被压抑过久，可能以其他方式（如躯体化）显现'
         ],
         tips: [
-          { title: '慢慢练习情感"打开"的能力', body: '尝试每天找一个小小的机会，分享自己真实的感受——哪怕是"今天有点累"或"这件事让我很开心"。情感表达是可以慢慢学习的技能，不需要一蹴而就。' },
+          { title: '慢慢练习情感"打开"的能力', body: '尝试每天找一个小小的机会，分享自己真实的感受----哪怕是"今天有点累"或"这件事让我很开心"。情感表达是可以慢慢学习的技能，不需要一蹴而就。' },
           { title: '留意"退缩冲动"出现的时刻', body: '当你感到想要逃离某段联结时，先暂停一下，问问自己：这是真的需要空间，还是习惯性的防御？有时候，留下来承受一点不适，会带来意外的收获。' },
           { title: '向伴侣解释你的需要', body: '告诉重要的人："我需要一些个人空间"并不等于"我不在乎你"。清晰地沟通你对独立的需要，同时让对方感受到你的在乎，可以大大减少误解。' },
           { title: '探索自己被压抑的情感层面', body: '日记写作、艺术创作、甚至心理咨询，都是帮助你与内心情感世界重新建立联系的好方式。那些被藏起来的情感，也是你真实自我的一部分。' },
         ],
-        closing: '独立与坚强，是你走过一段岁月后磨砺出的品质。只是，真正的力量从来不排斥柔软——它包含了可以在需要时靠近他人、被看见、被承托的能力。你不必放下那份独立，只需在那份独立中，为联结留一扇门。愿你慢慢发现，开放自己，并不会失去你。🍃'
+        closing: '独立与坚强，是你走过一段岁月后磨砺出的品质。只是，真正的力量从来不排斥柔软----它包含了可以在需要时靠近他人、被看见、被承托的能力。你不必放下那份独立，只需在那份独立中，为联结留一扇门。愿你慢慢发现，开放自己，并不会失去你。🍃'
       },
       fearful: {
         name: '恐惧型依恋', en: 'Fearful Avoidant', icon: '🌙',
         overview: [
-          '你的测评结果显示出<strong>恐惧型依恋（矛盾回避型）</strong>的特征——这是一种同时高度渴望亲密、又对亲密感到恐惧的依恋模式，常常伴随着矛盾的内心体验。',
-          '恐惧型依恋通常与早期经历中较多的伤害、忽视或不可预测的照顾有关——亲近的人同时也是让你感到不安全的人。于是，内心形成了"我想要靠近，但靠近是危险的"这样矛盾的图式。',
+          '你的测评结果显示出<strong>恐惧型依恋（矛盾回避型）</strong>的特征----这是一种同时高度渴望亲密、又对亲密感到恐惧的依恋模式，常常伴随着矛盾的内心体验。',
+          '恐惧型依恋通常与早期经历中较多的伤害、忽视或不可预测的照顾有关----亲近的人同时也是让你感到不安全的人。于是，内心形成了"我想要靠近，但靠近是危险的"这样矛盾的图式。',
           '这种模式在所有依恋类型中通常体验最为复杂，但也蕴含着极深的情感体验能力与内省潜力（Main & Hesse, 1990）。许多具有高度同理心和创造力的人，有着类似的内心世界。'
         ],
         strengths: [
@@ -1136,7 +1137,7 @@ const LANG = {
         tips: [
           { title: '认识"矛盾"是你内心的保护', body: '那个想靠近又想逃跑的部分，是你的内心在试图同时保护你和满足你。尝试以慈悲的眼光看待这个矛盾，而不是评判自己"怎么又这样了"。' },
           { title: '寻求安全稳定的关系环境', body: '在相对安全、稳定、有边界的关系中，恐惧型依恋有机会被慢慢"疗愈"。如果你身边有这样的人，珍视那份联结，允许自己慢慢相信。' },
-          { title: '情绪调节是可以学习的技能', body: '当矛盾情绪涌现时，尝试"命名情绪"（"我现在感到恐惧和渴望同时存在"）——这个简单的动作能激活大脑的理性区域，帮助你稳定下来。' },
+          { title: '情绪调节是可以学习的技能', body: '当矛盾情绪涌现时，尝试"命名情绪"（"我现在感到恐惧和渴望同时存在"）----这个简单的动作能激活大脑的理性区域，帮助你稳定下来。' },
           { title: '考虑心理咨询的支持', body: '恐惧型依恋通常有较深的早期创伤根源，专业的心理咨询（尤其是创伤知情的方法，如 EMDR、依恋为本的咨询）能够提供深度的支持与疗愈。' },
         ],
         closing: '你内心那个同时渴望爱又害怕爱的部分，不是弱点，而是你曾经经历过的见证。每一次在恐惧中仍然选择靠近，每一次在想逃离时仍然留了下来，都是你勇气的体现。你不需要马上"好起来"，也不需要假装没有挣扎。愿你在自己的节奏里，慢慢发现：有些人，是真的可以信任的；而你，永远值得被温柔对待。🌙'
@@ -1148,8 +1149,8 @@ const LANG = {
     coverTitle: 'Attachment Style Assessment',
     coverSubtitle: 'ECR-R Scale · Based on Fraley, Waller & Brennan (2000)',
     introTitle: 'About This Assessment',
-    introP1: 'This assessment is based on the <strong>ECR-R (Experiences in Close Relationships – Revised)</strong>, developed by Fraley, Waller, and Brennan in 2000. It is one of the most widely validated self-report measures of adult attachment in psychological research and clinical practice.',
-    introP2: '<strong>36 items</strong>, approximately <strong>8–12 minutes</strong>. Please answer based on how you genuinely feel in <em>close relationships (romantic or deep friendships)</em>. There are no right or wrong answers.',
+    introP1: 'This assessment is based on the <strong>ECR-R (Experiences in Close Relationships -- Revised)</strong>, developed by Fraley, Waller, and Brennan in 2000. It is one of the most widely validated self-report measures of adult attachment in psychological research and clinical practice.',
+    introP2: '<strong>36 items</strong>, approximately <strong>8--12 minutes</strong>. Please answer based on how you genuinely feel in <em>close relationships (romantic or deep friendships)</em>. There are no right or wrong answers.',
     introP3: 'Results are for self-reflection only and do not constitute clinical diagnosis.',
     tag1: '📊 ECR-R Scale', tag2: '🔬 Validated', tag3: '36 items · ~10 min', tag4: '🔒 Private',
     btnStart: 'Begin Assessment →',
@@ -1194,9 +1195,9 @@ const LANG = {
       secure: {
         name: 'Secure Attachment', en: 'Secure Attachment', icon: '🌿',
         overview: [
-          'Your results reflect the characteristics of <strong>Secure Attachment</strong>—the pattern most conducive to healthy, fulfilling close relationships.',
+          'Your results reflect the characteristics of <strong>Secure Attachment</strong>--the pattern most conducive to healthy, fulfilling close relationships.',
           'Securely attached individuals typically built a stable emotional foundation early in life, allowing them to balance closeness and independence with relative ease. You generally trust others and believe you are worthy of love. In relationships, you can offer warm support while also communicating your own needs clearly.',
-          'Research shows (Mikulincer & Shaver, 2007) that securely attached individuals tend to report higher relationship satisfaction, more effective conflict resolution, and greater emotional flexibility. This doesn\'t mean you have no challenges—it means you have inner resources that help you navigate them.'
+          'Research shows (Mikulincer & Shaver, 2007) that securely attached individuals tend to report higher relationship satisfaction, more effective conflict resolution, and greater emotional flexibility. This doesn\'t mean you have no challenges--it means you have inner resources that help you navigate them.'
         ],
         strengths: [
           'Able to express needs and emotions openly, with relatively direct communication',
@@ -1211,26 +1212,26 @@ const LANG = {
           'May occasionally underestimate others\' vulnerability and emotional needs'
         ],
         tips: [
-          { title: 'Cherish and tend to this security', body: 'Secure attachment isn\'t something to take for granted—it reflects genuine growth and learning. Keep checking in with your own emotional state. This inner security is your most valuable resource.' },
-          { title: 'Learn about different attachment styles', body: 'If your partner shows high anxiety or avoidance, exploring attachment theory can help you respond with more patience and understanding—seeing the unmet need beneath the behavior.' },
-          { title: 'Keep nurturing your relationships', body: 'Securely attached people sometimes invest less when things "feel fine." Remember to regularly share your inner world with those you love—depth of connection needs tending.' },
+          { title: 'Cherish and tend to this security', body: 'Secure attachment isn\'t something to take for granted--it reflects genuine growth and learning. Keep checking in with your own emotional state. This inner security is your most valuable resource.' },
+          { title: 'Learn about different attachment styles', body: 'If your partner shows high anxiety or avoidance, exploring attachment theory can help you respond with more patience and understanding--seeing the unmet need beneath the behavior.' },
+          { title: 'Keep nurturing your relationships', body: 'Securely attached people sometimes invest less when things "feel fine." Remember to regularly share your inner world with those you love--depth of connection needs tending.' },
           { title: 'Your steadiness is healing for others', body: 'Research shows that secure partners can help anxious or avoidant individuals gradually develop "earned security." Your calm, warmth, and reliability are a quiet form of care.' },
         ],
-        closing: 'Whatever your result, your story is uniquely yours. Security is not a fixed destination—it can deepen and grow throughout your life. May you continue exploring your inner landscape with curiosity and tenderness. That landscape will always be worth being gently known. 🌿'
+        closing: 'Whatever your result, your story is uniquely yours. Security is not a fixed destination--it can deepen and grow throughout your life. May you continue exploring your inner landscape with curiosity and tenderness. That landscape will always be worth being gently known. 🌿'
       },
       anxious: {
-        name: 'Anxious Attachment', en: 'Anxious–Preoccupied', icon: '🌊',
+        name: 'Anxious Attachment', en: 'Anxious--Preoccupied', icon: '🌊',
         overview: [
-          'Your results reflect the characteristics of <strong>Anxious Attachment</strong>—a pattern in which you deeply crave closeness while also frequently worrying about losing it.',
-          'Anxious attachment often develops when early caregivers were inconsistent—sometimes warm and available, other times distant or unpredictable. In response, you learned to signal your needs more intensely to try to maintain connection. This is not a flaw; it was an intelligent adaptation to an uncertain environment.',
-          'In adult relationships, this pattern often appears as: intense longing for closeness, deep fear of abandonment, and heightened emotional reactivity in relationships. Research (Mikulincer & Shaver, 2016) also shows that anxiously attached individuals often have a rich capacity for emotional sensitivity—a genuine gift alongside the challenges.'
+          'Your results reflect the characteristics of <strong>Anxious Attachment</strong>--a pattern in which you deeply crave closeness while also frequently worrying about losing it.',
+          'Anxious attachment often develops when early caregivers were inconsistent--sometimes warm and available, other times distant or unpredictable. In response, you learned to signal your needs more intensely to try to maintain connection. This is not a flaw; it was an intelligent adaptation to an uncertain environment.',
+          'In adult relationships, this pattern often appears as: intense longing for closeness, deep fear of abandonment, and heightened emotional reactivity in relationships. Research (Mikulincer & Shaver, 2016) also shows that anxiously attached individuals often have a rich capacity for emotional sensitivity--a genuine gift alongside the challenges.'
         ],
         strengths: [
           'Emotionally perceptive and attuned to others\' feelings',
           'Passionately invested in relationships, willing to give deeply',
-          'Expressive with feelings—partners can usually feel your love clearly',
+          'Expressive with feelings--partners can usually feel your love clearly',
           'Highly sensitive to relational dynamics, often catching issues early',
-          'Deeply motivated by meaningful connection—your relationships can be profound'
+          'Deeply motivated by meaningful connection--your relationships can be profound'
         ],
         challenges: [
           'May internalize others\' moods or behavior as a reflection of your own worth',
@@ -1240,22 +1241,22 @@ const LANG = {
           'Tendency to over-analyze and worry about others\' intentions'
         ],
         tips: [
-          { title: 'Build internal security', body: 'Explore what helps you feel grounded within yourself—meditation, journaling, creative expression. Inner stability reduces the need for constant external reassurance.' },
+          { title: 'Build internal security', body: 'Explore what helps you feel grounded within yourself--meditation, journaling, creative expression. Inner stability reduces the need for constant external reassurance.' },
           { title: 'Distinguish present reality from old patterns', body: 'When anxiety rises, gently ask yourself: "Is this responding to what\'s actually happening, or is it an echo of older fears?" That distinction is often clarifying.' },
-          { title: 'Practice clear, direct expression', body: 'When you want closeness, try saying "I feel… and I\'d love…" rather than testing indirectly. Direct expression is often more effective—and less exhausting—than hinting.' },
-          { title: 'Cultivate your own world', body: 'Develop interests, friendships, and pursuits beyond any single relationship. This isn\'t about caring less—it\'s about not concentrating all your emotional weight in one place. Both you and the relationship benefit.' },
+          { title: 'Practice clear, direct expression', body: 'When you want closeness, try saying "I feel… and I\'d love…" rather than testing indirectly. Direct expression is often more effective--and less exhausting--than hinting.' },
+          { title: 'Cultivate your own world', body: 'Develop interests, friendships, and pursuits beyond any single relationship. This isn\'t about caring less--it\'s about not concentrating all your emotional weight in one place. Both you and the relationship benefit.' },
         ],
-        closing: 'Profound emotional sensitivity is not a defect—it\'s the depth of how you experience the world. The experiences that taught you to feel uncertain also taught you to love with remarkable intensity. Now you\'re learning to feel safe while loving. That takes time, and you\'re already on the path. May you hold that tender, love-seeking part of yourself with great kindness—she/he deserves to be seen and held with care. 🌊'
+        closing: 'Profound emotional sensitivity is not a defect--it\'s the depth of how you experience the world. The experiences that taught you to feel uncertain also taught you to love with remarkable intensity. Now you\'re learning to feel safe while loving. That takes time, and you\'re already on the path. May you hold that tender, love-seeking part of yourself with great kindness--she/he deserves to be seen and held with care. 🌊'
       },
       avoidant: {
-        name: 'Avoidant Attachment', en: 'Dismissing–Avoidant', icon: '🍃',
+        name: 'Avoidant Attachment', en: 'Dismissing--Avoidant', icon: '🍃',
         overview: [
-          'Your results reflect the characteristics of <strong>Dismissing Avoidant Attachment</strong>—a pattern in which you tend to prioritize independence and maintain emotional distance in close relationships.',
-          'Avoidant attachment commonly develops when early caregivers were consistently emotionally unavailable or unresponsive. You learned that depending on others wasn\'t reliable, so you became self-sufficient and learned to suppress attachment needs. This was a wise adaptation—but in adult relationships, it can sometimes create distance you don\'t entirely intend.',
-          'Research (Fraley & Shaver, 2000) shows that avoidantly attached individuals often have strong self-efficacy and problem-solving capabilities. Crucially, their emotional needs are present—they are simply held at a deeper, less accessible level.'
+          'Your results reflect the characteristics of <strong>Dismissing Avoidant Attachment</strong>--a pattern in which you tend to prioritize independence and maintain emotional distance in close relationships.',
+          'Avoidant attachment commonly develops when early caregivers were consistently emotionally unavailable or unresponsive. You learned that depending on others wasn\'t reliable, so you became self-sufficient and learned to suppress attachment needs. This was a wise adaptation--but in adult relationships, it can sometimes create distance you don\'t entirely intend.',
+          'Research (Fraley & Shaver, 2000) shows that avoidantly attached individuals often have strong self-efficacy and problem-solving capabilities. Crucially, their emotional needs are present--they are simply held at a deeper, less accessible level.'
         ],
         strengths: [
-          'Highly self-sufficient—able to care for yourself with skill',
+          'Highly self-sufficient--able to care for yourself with skill',
           'Tends to stay calm under relational pressure, not easily overwhelmed',
           'Logical and clear-headed, not swayed by excessive emotionality',
           'Has a clear sense of personal boundaries',
@@ -1269,26 +1270,26 @@ const LANG = {
           'Suppressed emotional needs may eventually emerge in other ways'
         ],
         tips: [
-          { title: 'Practice small emotional openings', body: 'Try sharing one genuine feeling each day—even something simple like "I\'m a bit tired today" or "that made me happy." Emotional expression is a learnable skill, developed gradually.' },
+          { title: 'Practice small emotional openings', body: 'Try sharing one genuine feeling each day--even something simple like "I\'m a bit tired today" or "that made me happy." Emotional expression is a learnable skill, developed gradually.' },
           { title: 'Notice the withdrawal impulse', body: 'When you feel the urge to pull back from connection, pause and ask: Do I genuinely need space right now, or is this a habitual defense? Sometimes staying present through mild discomfort opens something new.' },
           { title: 'Communicate your need for space clearly', body: 'Telling someone "I need some time alone" is not the same as "I don\'t care about you." When you name your need for independence while also conveying care, you can prevent a lot of misunderstanding.' },
-          { title: 'Explore your emotional inner world', body: 'Journaling, art, or therapy can help you reconnect with the emotional landscape you\'ve kept at arm\'s length. Those feelings are a real part of who you are—and they have things to tell you.' },
+          { title: 'Explore your emotional inner world', body: 'Journaling, art, or therapy can help you reconnect with the emotional landscape you\'ve kept at arm\'s length. Those feelings are a real part of who you are--and they have things to tell you.' },
         ],
-        closing: 'Independence and self-reliance are real strengths, shaped by real experience. And true strength has never been at odds with softness—it includes the capacity to move closer when you want to, to be seen, and to lean. You don\'t have to let go of your independence. You only have to leave one door open for connection. May you find, slowly, that opening yourself doesn\'t mean losing yourself. 🍃'
+        closing: 'Independence and self-reliance are real strengths, shaped by real experience. And true strength has never been at odds with softness--it includes the capacity to move closer when you want to, to be seen, and to lean. You don\'t have to let go of your independence. You only have to leave one door open for connection. May you find, slowly, that opening yourself doesn\'t mean losing yourself. 🍃'
       },
       fearful: {
-        name: 'Fearful Avoidant', en: 'Fearful–Avoidant', icon: '🌙',
+        name: 'Fearful Avoidant', en: 'Fearful--Avoidant', icon: '🌙',
         overview: [
-          'Your results reflect the characteristics of <strong>Fearful Avoidant Attachment</strong>—a pattern in which you simultaneously yearn for closeness and feel frightened by it, often leading to deeply conflicted inner experiences.',
-          'Fearful avoidant attachment often develops when early caregivers were sources of both comfort and fear—when the people you needed most were also unpredictable, harmful, or unavailable. The mind learned: "I need closeness, but closeness is dangerous."',
-          'This is among the most complex attachment patterns to live with, but it also carries deep emotional capacity and reflective potential (Main & Hesse, 1990). Many highly empathic, introspective people share this inner landscape—and with the right support, meaningful growth is not only possible, it\'s common.'
+          'Your results reflect the characteristics of <strong>Fearful Avoidant Attachment</strong>--a pattern in which you simultaneously yearn for closeness and feel frightened by it, often leading to deeply conflicted inner experiences.',
+          'Fearful avoidant attachment often develops when early caregivers were sources of both comfort and fear--when the people you needed most were also unpredictable, harmful, or unavailable. The mind learned: "I need closeness, but closeness is dangerous."',
+          'This is among the most complex attachment patterns to live with, but it also carries deep emotional capacity and reflective potential (Main & Hesse, 1990). Many highly empathic, introspective people share this inner landscape--and with the right support, meaningful growth is not only possible, it\'s common.'
         ],
         strengths: [
           'Exceptionally rich emotional experience and understanding of relational complexity',
           'Strong capacity for self-reflection and insight',
           'Deep empathy for others\' pain and emotional experience',
           'Often develops profound wisdom through navigating difficulty',
-          'Craves authentic connection—when felt, it is real and meaningful'
+          'Craves authentic connection--when felt, it is real and meaningful'
         ],
         challenges: [
           'May experience constant internal tension between wanting closeness and fearing it',
@@ -1299,11 +1300,11 @@ const LANG = {
         ],
         tips: [
           { title: 'See the conflict as protection, not dysfunction', body: 'The part of you that wants to run toward and away from love at the same time is trying to keep you safe while also honoring your needs. Meet this contradiction with compassion, not judgment.' },
-          { title: 'Seek steady, safe relationships', body: 'In relationships with consistent, boundaried, predictable people, fearful avoidant patterns have the chance to slowly heal. If you have such people around you, allow yourself to trust them—gradually.' },
+          { title: 'Seek steady, safe relationships', body: 'In relationships with consistent, boundaried, predictable people, fearful avoidant patterns have the chance to slowly heal. If you have such people around you, allow yourself to trust them--gradually.' },
           { title: 'Learn to name your emotions in the moment', body: 'When conflicting emotions surge, try labeling them: "Right now I feel both scared and wanting to connect." Naming activates the brain\'s rational centers and can help you stabilize.' },
-          { title: 'Consider professional support', body: 'Fearful avoidant attachment often has roots in earlier trauma. Trauma-informed approaches—like EMDR, somatic therapy, or attachment-based counseling—can offer profound healing that goes beyond what self-help alone can reach.' },
+          { title: 'Consider professional support', body: 'Fearful avoidant attachment often has roots in earlier trauma. Trauma-informed approaches--like EMDR, somatic therapy, or attachment-based counseling--can offer profound healing that goes beyond what self-help alone can reach.' },
         ],
-        closing: 'That part of you that simultaneously wants love and fears it is not broken—it is bearing witness to what you have lived through. Every time you chose to stay when fear said run, every time you reached toward connection despite the risk—that was courage. You don\'t have to heal on anyone else\'s timeline. You don\'t have to pretend the struggle isn\'t real. May you find, slowly and in your own way, that some people are safe to trust—and that you, always and without condition, deserve to be held with gentleness. 🌙'
+        closing: 'That part of you that simultaneously wants love and fears it is not broken--it is bearing witness to what you have lived through. Every time you chose to stay when fear said run, every time you reached toward connection despite the risk--that was courage. You don\'t have to heal on anyone else\'s timeline. You don\'t have to pretend the struggle isn\'t real. May you find, slowly and in your own way, that some people are safe to trust--and that you, always and without condition, deserve to be held with gentleness. 🌙'
       }
     }
   }
@@ -1634,7 +1635,7 @@ function shareAssessment() {
   const url = window.location.href;
   const text = currentLang === 'zh'
     ? `推荐你做一份专业的依恋模式测评，基于 ECR-R 量表，约10分钟，蛮准的！\n${url}`
-    : `Here's a professional attachment style assessment (ECR-R based, ~10 min) — highly recommend!\n${url}`;
+    : `Here's a professional attachment style assessment (ECR-R based, ~10 min) -- highly recommend!\n${url}`;
 
   if (navigator.share) {
     navigator.share({
