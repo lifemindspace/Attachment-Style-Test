@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>依恋模式心理测评 | Attachment Style Assessment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+<style>
+  :root {
+    --mint-white: #F4F8F4;
+    --cream: #FAF8F3;
+    --sage-light: #E2EDE2;
+    --sage: #B8D4B8;
+    --sage-medium: #8CB88C;
+    --sage-deep: #5E9E6E;
+    --sage-dark: #3D7A52;
+    --warm-brown: #6B5B4E;
+    --warm-brown-light: #9B8B7E;
+    --accent-gold: #C4A882;
+    --text-main: #4A4038;
+    --text-sub: #7A6E66;
+    --text-light: #A09890;
+    --card-bg: #FDFCFA;
+    --border: #DDE8DD;
+    --shadow: rgba(94,158,110,0.10);
+    --radius: 18px;
+    --radius-sm: 10px;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Noto Sans SC', 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: var(--mint-white);
+    color: var(--text-main);
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+
+  /* ===== LANGUAGE TOGGLE ===== */
+  .lang-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(244,248,244,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 24px;
+    gap: 12px;
+  }
+  .lang-brand {
+    font-family: 'Noto Serif SC', 'Lora', 'Songti SC', 'SimSun', Georgia, serif;
+    font-size: 13px;
+    color: var(--sage-dark);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+  .lang-toggle {
+    display: flex;
+    background: var(--sage-light);
+    border-radius: 20px;
+    padding: 3px;
+    gap: 2px;
+  }
+  .lang-btn {
+    padding: 5px 16px;
+    border-radius: 16px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-sub);
+    transition: all 0.25s ease;
+    font-family: inherit;
+  }
+  .lang-btn.active {
+    background: var(--card-bg);
+    color: var(--sage-dark);
+    box-shadow: 0 1px 4px var(--shadow);
+  }
+
+  /* ===== WRAPPER ===== */
+  .wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 20px 40px;
+  }
+
+  /* ===== COVER ===== */
+  #page-cover {
+    text-align: center;
+    padding: 30px 0 10px;
+  }
+  .cover-emblem {
+    width: 90px; height: 90px;
+    margin: 0 auto 28px;
+    position: relative;
+  }
+  .cover-emblem svg { width: 100%; height: 100%; }
+
+  .cover-title {
+    font-family: 'Noto Serif SC', 'Lora', 'Songti SC', 'SimSun', Georgia, serif;
+    font-size: clamp(26px, 5vw, 34px);
+    font-weight: 600;
+    color: var(--sage-dark);
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  .cover-subtitle {
+    font-family: 'Lora', 'Songti SC', Georgia, serif;
+    font-size: 15px;
+    color: var(--warm-brown-light);
+    font-style: italic;
+    margin-bottom: 28px;
+    letter-spacing: 0.02em;
+  }
+  .cover-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 36px;
+    text-align: left;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 24px var(--shadow);
+  }
+  .cover-card h3 {
+    font-family: 'Noto Serif SC', 'Songti SC', 'SimSun', Georgia, serif;
+    font-size: 15px;
+    color: var(--sage-dark);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .cover-card p {
+    font-size: 14px;
+    color: var(--text-sub);
+    margin-bottom: 10px;
+    line-height: 1.8;
+  }
+  .cover-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .tag {
+    background: var(--sage-light);
+    color: var(--sage-dark);
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+  .btn-start {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, var(--sage-deep), var(--sage-dark));
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Noto Sans SC', sans-serif;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(62,122,82,0.25);
+  }
+  .btn-start:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 28px rgba(62,122,82,0.35);
+  }
+
+  /* ===== PROGRESS ===== */
+  #page-quiz { display: none; }
+  .progress-header {
+    margin-bottom: 28px;
+  }
+  .progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .progress-label {
+    font-size: 13px;
+    color: var(--text-sub);
+    font-weight: 400;
+  }
+  .progress-num {
+    font-size: 13px;
+    color: var(--sage-dark);
+    font-weight: 500;
+  }
+  .progress-bar {
+    height: 6px;
+    background: var(--sage-light);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--sage-medium), var(--sage-deep));
+    border-radius: 3px;
+    transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  /* ===== QUESTION CARD ===== */
+  .q-section-label {
+    font-size: 12px;
+    color: var(--sage-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .q-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px var(--shadow);
+    animation: fadeSlide 0.35s ease;
+  }
+  @keyframes fadeSlide {
+    from { opacity:0; transform: translateY(12px); }
+    to { opacity:1; transform: translateY(0); }
+  }
+  .q-number {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-bottom: 12px;
+    font-weight: 400;
+  }
+  .q-text {
+    font-family: 'Noto Serif SC', 'Songti SC', 'SimSun', Georgia, serif;
+    font-size: 17px;
+    color: var(--text-main);
+    font-weight: 400;
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  .option-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 4px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+  }
+  .option-btn:hover {
+    border-color: var(--sage-medium);
+    background: var(--sage-light);
+  }
+  .option-btn.selected {
+    border-color: var(--sage-deep);
+    background: linear-gradient(135deg, #e8f2e8, #d4e8d4);
+    box-shadow: 0 2px 10px rgba(94,158,110,0.2);
+  }
+  .option-dot {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+    font-size: 10px;
+    color: transparent;
+    background: var(--card-bg);
+  }
+  .option-btn.selected .option-dot {
+    border-color: var(--sage-deep);
+    background: var(--sage-deep);
+    color: #fff;
+  }
+  .option-score {
+    font-size: 11px;
+    color: var(--text-light);
+    font-weight: 500;
+  }
+  .option-btn.selected .option-score {
+    color: var(--sage-dark);
+  }
+  .options-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+  }
+  .options-label {
+    font-size: 11px;
+    color: var(--text-light);
+    max-width: 80px;
+    line-height: 1.3;
+  }
+
+  /* ===== NAV BUTTONS ===== */
+  .q-nav {
+    display: flex;
+    gap: 12px;
+    margin-top: 4px;
+  }
+  .btn-nav {
+    flex: 1;
+    padding: 13px;
+    border-radius: var(--radius-sm);
+    border: 1.5px solid var(--border);
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text-sub);
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+  .btn-nav:hover { border-color: var(--sage-medium); color: var(--sage-dark); }
+  .btn-nav.primary {
+    background: linear-gradient(135deg, var(--sage-deep), var(--sage-dark));
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 3px 14px rgba(62,122,82,0.2);
+  }
+  .btn-nav.primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 20px rgba(62,122,82,0.3);
+  }
+
+  /* ===== RESULT PAGE ===== */
+  #page-result { display: none; }
+  .result-hero {
+    text-align: center;
+    padding: 20px 0 30px;
+  }
+  .result-type-icon {
+    width: 80px; height: 80px;
+    margin: 0 auto 20px;
+    background: var(--sage-light);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 36px;
+  }
+  .result-type-name {
+    font-family: 'Noto Serif SC', 'Songti SC', 'SimSun', Georgia, serif;
+    font-size: clamp(22px, 4vw, 28px);
+    color: var(--sage-dark);
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: 0.03em;
+  }
+  .result-type-en {
+    font-family: 'Lora', 'Songti SC', Georgia, serif;
+    font-size: 14px;
+    color: var(--warm-brown-light);
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+
+  .scores-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .score-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 18px;
+    text-align: center;
+  }
+  .score-box-label {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-bottom: 6px;
+    font-weight: 400;
+  }
+  .score-box-value {
+    font-family: 'Lora', 'Songti SC', Georgia, serif;
+    font-size: 28px;
+    color: var(--sage-dark);
+    font-weight: 500;
+    line-height: 1;
+  }
+  .score-box-sub {
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 4px;
+  }
+
+  .dimension-bars {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  .dim-row {
+    margin-bottom: 16px;
+  }
+  .dim-row:last-child { margin-bottom: 0; }
+  .dim-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
+  .dim-name { color: var(--text-main); font-weight: 500; }
+  .dim-val { color: var(--sage-dark); font-weight: 500; }
+  .dim-bar {
+    height: 8px;
+    background: var(--sage-light);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .dim-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--sage-medium), var(--sage-deep));
+    transition: width 1s cubic-bezier(0.4,0,0.2,1) 0.3s;
+  }
+  .dim-desc {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-top: 4px;
+    line-height: 1.5;
+  }
+
+  .result-section {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 28px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 12px var(--shadow);
+  }
+  .result-section h3 {
+    font-family: 'Noto Serif SC', 'Songti SC', 'SimSun', Georgia, serif;
+    font-size: 16px;
+    color: var(--sage-dark);
+    font-weight: 500;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .result-section h3 .icon { font-size: 17px; }
+  .result-section p {
+    font-size: 14px;
+    color: var(--text-sub);
+    margin-bottom: 10px;
+    line-height: 1.85;
+  }
+  .result-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  .result-section ul li {
+    font-size: 14px;
+    color: var(--text-sub);
+    padding: 6px 0 6px 20px;
+    position: relative;
+    line-height: 1.7;
+    border-bottom: 1px solid var(--sage-light);
+  }
+  .result-section ul li:last-child { border-bottom: none; }
+  .result-section ul li::before {
+    content: '·';
+    position: absolute;
+    left: 6px;
+    color: var(--sage-medium);
+    font-size: 18px;
+    top: 3px;
+  }
+
+  .tips-grid {
+    display: grid;
+    gap: 10px;
+  }
+  .tip-item {
+    background: var(--mint-white);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    border-left: 3px solid var(--sage-medium);
+    font-size: 13.5px;
+    color: var(--text-sub);
+    line-height: 1.75;
+  }
+  .tip-item strong {
+    color: var(--sage-dark);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 3px;
+    font-size: 13px;
+  }
+
+  /* ===== CLOSING ===== */
+  .closing-card {
+    background: linear-gradient(135deg, #eef5ee, #f5f0ea);
+    border: 1px solid var(--sage);
+    border-radius: var(--radius);
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .closing-card::before {
+    content: '❧';
+    position: absolute;
+    top: -10px; right: 16px;
+    font-size: 60px;
+    color: var(--sage-light);
+    opacity: 0.5;
+  }
+  .closing-card p {
+    font-family: 'Noto Serif SC', 'Songti SC', 'SimSun', Georgia, serif;
+    font-size: 15px;
+    color: var(--warm-brown);
+    line-height: 2;
+    font-weight: 400;
+  }
+
+  /* ===== ACTION BUTTONS ===== */
+  .action-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .btn-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    border: 1.5px solid var(--border);
+    background: var(--card-bg);
+    cursor: pointer;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text-main);
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+  .btn-action:hover {
+    border-color: var(--sage-medium);
+    background: var(--sage-light);
+    color: var(--sage-dark);
+  }
+  .btn-action.save {
+    background: linear-gradient(135deg, var(--sage-deep), var(--sage-dark));
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 3px 14px rgba(62,122,82,0.2);
+  }
+  .btn-action.save:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 20px rgba(62,122,82,0.3);
+  }
+
+  .save-note {
+    background: #FFF8E8;
+    border: 1px solid #EDD89A;
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    font-size: 12.5px;
+    color: #7A6530;
+    margin-bottom: 16px;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .save-note-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+  /* ===== WECHAT BUTTON ===== */
+  .wechat-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px;
+    border-radius: var(--radius-sm);
+    background: var(--card-bg);
+    border: 1.5px solid var(--border);
+    text-decoration: none;
+    color: var(--sage-dark);
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+    font-family: inherit;
+    cursor: pointer;
+    margin-bottom: 12px;
+    width: 100%;
+  }
+  .wechat-btn:hover {
+    background: var(--sage-light);
+    border-color: var(--sage-medium);
+    transform: translateY(-1px);
+  }
+  .wechat-icon {
+    width: 20px; height: 20px;
+    background: #07C160;
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    color: white;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  /* ===== TOAST ===== */
+  .toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--text-main);
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-size: 13px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 999;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-light);
+    padding: 16px 0 20px;
+    line-height: 1.8;
+  }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 480px) {
+    .wrapper { padding: 70px 14px 30px; }
+    .options-grid { grid-template-columns: repeat(7,1fr); gap: 4px; }
+    .option-btn { padding: 8px 2px; }
+    .option-dot { width: 16px; height: 16px; font-size: 9px; }
+    .option-score { font-size: 10px; }
+    .cover-card { padding: 22px 20px; }
+    .q-card { padding: 22px 18px; }
+    .result-section { padding: 20px 18px; }
+    .scores-display { grid-template-columns: 1fr 1fr; gap: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+  <span class="lang-brand" id="brand-text">依恋模式心理测评</span>
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('zh')">中文</button>
+    <button class="lang-btn" onclick="setLang('en')">English</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<div class="wrapper">
+
+  <!-- ===== COVER PAGE ===== -->
+  <div id="page-cover">
+    <div class="cover-emblem">
+      <svg viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="45" cy="45" r="44" stroke="#B8D4B8" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <path d="M45 20 C45 20, 58 30, 58 42 C58 52, 50 60, 45 65 C40 60, 32 52, 32 42 C32 30, 45 20, 45 20Z" fill="#C8DFC8" opacity="0.6"/>
+        <path d="M45 26 C45 26, 55 34, 55 43 C55 51, 49 58, 45 62 C41 58, 35 51, 35 43 C35 34, 45 26, 45 26Z" fill="#8CB88C" opacity="0.7"/>
+        <path d="M45 32 C45 32, 51 38, 51 44 C51 50, 48 54, 45 57 C42 54, 39 50, 39 44 C39 38, 45 32, 45 32Z" fill="#5E9E6E" opacity="0.85"/>
+        <path d="M45 62 L45 72" stroke="#5E9E6E" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M38 68 L45 72 L52 68" stroke="#8CB88C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+    </div>
+
+    <h1 class="cover-title" id="cover-title">依恋模式心理测评</h1>
+    <p class="cover-subtitle" id="cover-subtitle">Attachment Style Assessment · ECR-R Scale</p>
+
+    <div class="cover-card">
+      <h3 id="intro-title">关于本测评</h3>
+      <p id="intro-p1">本测评基于 <strong>ECR-R 亲密关系体验量表（修订版）</strong>，由 Fraley、Waller 与 Brennan 于 2000 年修订，是当前依恋研究中信效度最高的自评工具之一，被广泛应用于心理学研究与临床实践。</p>
+      <p id="intro-p2">测评共 <strong>36 题</strong>，约需 <strong>8--12 分钟</strong>。请依据您在<em>亲密关系（包括恋爱、深度友谊等）</em>中的真实感受作答，没有对错之分。</p>
+      <p id="intro-p3">测评结果仅供自我探索参考，不构成临床诊断。</p>
+      <div class="cover-tags">
+        <span class="tag" id="tag1">📊 ECR-R 量表</span>
+        <span class="tag" id="tag2">🔬 信效度验证</span>
+        <span class="tag" id="tag3">36 题 · 约10分钟</span>
+        <span class="tag" id="tag4">🔒 隐私保护</span>
+      </div>
+    </div>
+
+    <button class="btn-start" onclick="startQuiz()" id="btn-start-text">开始测评 →</button>
+
+    <br>
+    <a href="https://mp.weixin.qq.com/s/uhKKOpjukGIFGDobLIK0QQ" target="_blank" class="wechat-btn" id="cover-wechat-btn">
+      <span class="wechat-icon">✦</span>
+      <span id="cover-wechat-text">返回原公众号文章</span>
+    </a>
+
+    <div class="footer" id="cover-footer">本测评内容基于学术研究，仅供参考 · 数据不上传，完全在本地运行</div>
+  </div>
+
+  <!-- ===== QUIZ PAGE ===== -->
+  <div id="page-quiz">
+    <div class="progress-header">
+      <div class="progress-info">
+        <span class="progress-label" id="progress-label">答题进度</span>
+        <span class="progress-num" id="progress-num">1 / 36</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill" style="width:2.7%"></div>
+      </div>
+    </div>
+
+    <div class="q-section-label" id="q-section-label">焦虑维度</div>
+    <div class="q-card">
+      <div class="q-number" id="q-number">第 1 题</div>
+      <div class="q-text" id="q-text"></div>
+      <div class="options-grid" id="options-grid"></div>
+      <div class="options-labels">
+        <span class="options-label" id="label-disagree">非常不符合</span>
+        <span class="options-label" style="text-align:right" id="label-agree">非常符合</span>
+      </div>
+    </div>
+
+    <div class="q-nav">
+      <button class="btn-nav" id="btn-prev" onclick="prevQ()" id="btn-prev-text">← 上一题</button>
+      <button class="btn-nav primary" id="btn-next" onclick="nextQ()" id="btn-next-text">下一题 →</button>
+    </div>
+
+    <br>
+    <a href="https://mp.weixin.qq.com/s/uhKKOpjukGIFGDobLIK0QQ" target="_blank" class="wechat-btn" id="quiz-wechat-btn">
+      <span class="wechat-icon">✦</span>
+      <span id="quiz-wechat-text">返回原公众号文章</span>
+    </a>
+  </div>
+
+  <!-- ===== RESULT PAGE ===== -->
+  <div id="page-result">
+    <div class="result-hero">
+      <div class="result-type-icon" id="result-icon">🌿</div>
+      <div class="result-type-name" id="result-type-name">安全型依恋</div>
+      <div class="result-type-en" id="result-type-en">Secure Attachment</div>
+    </div>
+
+    <div class="scores-display">
+      <div class="score-box">
+        <div class="score-box-label" id="anxiety-label">焦虑维度</div>
+        <div class="score-box-value" id="anxiety-score">--</div>
+        <div class="score-box-sub" id="anxiety-sub">/ 7.0 满分</div>
+      </div>
+      <div class="score-box">
+        <div class="score-box-label" id="avoidance-label">回避维度</div>
+        <div class="score-box-value" id="avoidance-score">--</div>
+        <div class="score-box-sub" id="avoidance-sub">/ 7.0 满分</div>
+      </div>
+    </div>
+
+    <div class="dimension-bars" id="dimension-bars">
+      <div class="dim-row">
+        <div class="dim-label">
+          <span class="dim-name" id="dim-anxiety-name">依恋焦虑</span>
+          <span class="dim-val" id="dim-anxiety-val">--</span>
+        </div>
+        <div class="dim-bar"><div class="dim-fill" id="dim-anxiety-fill" style="width:0%"></div></div>
+        <div class="dim-desc" id="dim-anxiety-desc">对关系中被遗弃或不被爱的担忧程度</div>
+      </div>
+      <div class="dim-row">
+        <div class="dim-label">
+          <span class="dim-name" id="dim-avoidance-name">依恋回避</span>
+          <span class="dim-val" id="dim-avoidance-val">--</span>
+        </div>
+        <div class="dim-bar"><div class="dim-fill" id="dim-avoidance-fill" style="width:0%"></div></div>
+        <div class="dim-desc" id="dim-avoidance-desc">在亲密关系中对依赖他人的回避程度</div>
+      </div>
+    </div>
+
+    <div class="result-section" id="section-overview">
+      <h3><span class="icon">🌱</span> <span id="section-overview-title">依恋模式解析</span></h3>
+      <div id="result-overview-content"></div>
+    </div>
+
+    <div class="result-section" id="section-strengths">
+      <h3><span class="icon">✨</span> <span id="section-strengths-title">你的关系优势</span></h3>
+      <ul id="result-strengths-list"></ul>
+    </div>
+
+    <div class="result-section" id="section-challenges">
+      <h3><span class="icon">🌊</span> <span id="section-challenges-title">可能的挑战</span></h3>
+      <ul id="result-challenges-list"></ul>
+    </div>
+
+    <div class="result-section" id="section-tips">
+      <h3><span class="icon">🌸</span> <span id="section-tips-title">关系小建议</span></h3>
+      <div class="tips-grid" id="result-tips-grid"></div>
+    </div>
+
+    <div class="closing-card" id="closing-card">
+      <p id="closing-text"></p>
+    </div>
+
+    <div class="save-note" id="save-note">
+      <span class="save-note-icon">⚠️</span>
+      <span id="save-note-text">请及时保存您的测评结果。此页面刷新后结果将消失，建议截图或点击下方按钮保存。</span>
+    </div>
+
+    <div class="action-bar">
+      <button class="btn-action save" onclick="saveResult()" id="btn-save-text">
+        📥 保存测评结果
+      </button>
+      <button class="btn-action" onclick="shareResult()" id="btn-share-result-text">
+        🔗 分享我的结果
+      </button>
+      <button class="btn-action" onclick="shareAssessment()" id="btn-share-assess-text">
+        📋 分享这份测评给朋友
+      </button>
+      <button class="btn-action" onclick="retakeQuiz()" id="btn-retake-text">
+        🔄 重新测评
+      </button>
+    </div>
+
+    <a href="https://mp.weixin.qq.com/s/uhKKOpjukGIFGDobLIK0QQ" target="_blank" class="wechat-btn" id="result-wechat-btn">
+      <span class="wechat-icon">✦</span>
+      <span id="result-wechat-text">返回原公众号文章</span>
+    </a>
+
+    <div class="footer" id="result-footer">
+      <span id="footer-text">本测评基于 ECR-R 量表 · 结果仅供参考，不构成临床诊断</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// =====================================================
+//  LANGUAGE DATA
+// =====================================================
+
+// Raw questions by dimension (18 Anxiety + 18 Avoidance each language)
+// These are interleaved at runtime for professional test design (A-V-A-V...)
+const RAW_ZH = {
+  A: [
+    { text: "我很担心会被亲密的人抛弃。", dim: "A", reverse: false },
+    { text: "我需要经常确认自己在对方心中的重要性。", dim: "A", reverse: false },
+    { text: "在亲密关系中，我常常担心对方不如我爱他/她那样爱我。", dim: "A", reverse: false },
+    { text: "我会非常在意亲密的人是否真心关心我。", dim: "A", reverse: false },
+    { text: "当我感到伴侣/亲密朋友不想和我亲近时，我会非常焦虑。", dim: "A", reverse: false },
+    { text: "如果察觉到对方想要疏远，我就会非常不安。", dim: "A", reverse: false },
+    { text: "我渴望与亲密的人非常亲近，但有时候这种渴望会把他们推开。", dim: "A", reverse: false },
+    { text: "我担心自己一个人待着的时候会感到很糟糕。", dim: "A", reverse: false },
+    { text: "如果亲密的人没有在我需要时出现，我会感到烦躁和不安。", dim: "A", reverse: false },
+    { text: "我在亲密关系中感到安心往往是困难的。", dim: "A", reverse: false },
+    { text: "有时候我非常渴望得到情感上的亲近，有时候又觉得这样让我不舒服。", dim: "A", reverse: false },
+    { text: "当我没有亲密关系时，我感到有些焦虑和不安全。", dim: "A", reverse: false },
+    { text: "我发现自己会因为在意亲密关系而分心。", dim: "A", reverse: false },
+    { text: "当和亲密的人分离时，我会感到非常难受。", dim: "A", reverse: false },
+    { text: "我很害怕最终会被自己在乎的人拒绝。", dim: "A", reverse: false },
+    { text: "如果亲密的人开始对我冷淡，我会非常担心这意味着什么。", dim: "A", reverse: false },
+    { text: "我的情绪会因为亲密关系的变化而大幅波动。", dim: "A", reverse: false },
+    { text: "我常常希望自己不要那么在意这段关系。", dim: "A", reverse: false },
+  ],
+  V: [
+    { text: "我更喜欢不过分依赖他人。", dim: "V", reverse: false },
+    { text: "向亲密的人寻求帮助让我感到不舒服。", dim: "V", reverse: false },
+    { text: "当我需要帮助时，我倾向于不向他人开口。", dim: "V", reverse: false },
+    { text: "我很难完全信任亲密的人。", dim: "V", reverse: false },
+    { text: "与他人分享我的个人想法和感受让我感到不自在。", dim: "V", reverse: false },
+    { text: "在亲密关系中，我倾向于保持一定的距离。", dim: "V", reverse: false },
+    { text: "我不愿意让亲密的人进入我内心深处。", dim: "V", reverse: false },
+    { text: "当他人试图与我非常亲近时，我会感到不舒服。", dim: "V", reverse: false },
+    { text: "靠近他人让我感到不自在。", dim: "V", reverse: false },
+    { text: "我宁愿不过于依赖伴侣或亲密朋友。", dim: "V", reverse: false },
+    { text: "在亲密关系中，我觉得分享个人想法很困难。", dim: "V", reverse: false },
+    { text: "我发现自己很难让他人依靠我。", dim: "V", reverse: false },
+    { text: "当他人想要亲近我时，我有一种退缩的冲动。", dim: "V", reverse: false },
+    { text: "我尽量避免与他人过于亲密。", dim: "V", reverse: false },
+    { text: "我对完全依赖他人感到不安。", dim: "V", reverse: false },
+    { text: "我不希望别人看到我脆弱的一面。", dim: "V", reverse: false },
+    { text: "我能够独立处理事情，不需要依赖伴侣或亲密朋友。", dim: "V", reverse: false },
+    { text: "感到和他人亲近让我有时觉得窒息。", dim: "V", reverse: false },
+  ]
+};
+
+const RAW_EN = {
+  A: [
+    { text: "I worry about being abandoned by people I'm close to.", dim: "A", reverse: false },
+    { text: "I need frequent reassurance that I matter to the people I'm close to.", dim: "A", reverse: false },
+    { text: "I often worry that my partner/close friends don't really love me as much as I love them.", dim: "A", reverse: false },
+    { text: "I'm very concerned about whether the people I'm close to genuinely care about me.", dim: "A", reverse: false },
+    { text: "I feel anxious when my partner/close friend seems to want more distance.", dim: "A", reverse: false },
+    { text: "I become very distressed when I sense someone I'm close to is pulling away.", dim: "A", reverse: false },
+    { text: "I want to be very close to people, but sometimes this desire drives them away.", dim: "A", reverse: false },
+    { text: "I worry about being alone without close relationships.", dim: "A", reverse: false },
+    { text: "When someone I'm close to doesn't show up when I need them, I feel irritable and unsettled.", dim: "A", reverse: false },
+    { text: "I find it hard to feel at ease and secure in close relationships.", dim: "A", reverse: false },
+    { text: "Sometimes I crave emotional closeness, and other times I find it uncomfortable.", dim: "A", reverse: false },
+    { text: "When I don't have a close relationship, I feel somewhat anxious and insecure.", dim: "A", reverse: false },
+    { text: "I find my mind preoccupied with my close relationships.", dim: "A", reverse: false },
+    { text: "I feel very upset when I'm separated from someone I'm close to.", dim: "A", reverse: false },
+    { text: "I'm afraid I will eventually be rejected by people who matter to me.", dim: "A", reverse: false },
+    { text: "When someone close to me becomes cold toward me, I worry a great deal about what it means.", dim: "A", reverse: false },
+    { text: "My moods fluctuate significantly depending on the state of my close relationships.", dim: "A", reverse: false },
+    { text: "I often wish I cared less about my close relationships.", dim: "A", reverse: false },
+  ],
+  V: [
+    { text: "I prefer not to depend too much on others.", dim: "V", reverse: false },
+    { text: "I feel uncomfortable asking close people for help.", dim: "V", reverse: false },
+    { text: "When I need help, I tend not to reach out to others.", dim: "V", reverse: false },
+    { text: "It's hard for me to fully trust those who are close to me.", dim: "V", reverse: false },
+    { text: "Sharing my personal thoughts and feelings with others makes me uncomfortable.", dim: "V", reverse: false },
+    { text: "I tend to keep a certain distance in close relationships.", dim: "V", reverse: false },
+    { text: "I don't like letting people too far into my inner world.", dim: "V", reverse: false },
+    { text: "I feel uncomfortable when others try to get very close to me.", dim: "V", reverse: false },
+    { text: "Being close to others makes me uneasy.", dim: "V", reverse: false },
+    { text: "I'd rather not depend too much on my partner or close friends.", dim: "V", reverse: false },
+    { text: "I find it difficult to share personal thoughts in close relationships.", dim: "V", reverse: false },
+    { text: "I find it hard to let others rely on me.", dim: "V", reverse: false },
+    { text: "When others want to be close to me, I feel an urge to pull back.", dim: "V", reverse: false },
+    { text: "I try to avoid becoming too intimate with others.", dim: "V", reverse: false },
+    { text: "I feel uncomfortable being fully dependent on anyone.", dim: "V", reverse: false },
+    { text: "I don't want others to see my vulnerable side.", dim: "V", reverse: false },
+    { text: "I handle things on my own and don't need to rely on my partner or close friends.", dim: "V", reverse: false },
+    { text: "Feeling very close to someone sometimes makes me feel suffocated.", dim: "V", reverse: false },
+  ]
+};
+
+// Interleave A and V dimensions for professional test design
+// Pattern: A-V-A-V... (alternating) to prevent response sets and dimension bias
+function buildInterleavedQuestions(raw) {
+  const result = [];
+  for (let i = 0; i < 18; i++) {
+    result.push(raw.A[i]); // odd positions: Anxiety
+    result.push(raw.V[i]); // even positions: Avoidance
+  }
+  return result;
+}
+
+const LANG = {
+  zh: {
+    brand: '依恋模式心理测评',
+    coverTitle: '依恋模式心理测评',
+    coverSubtitle: 'Attachment Style Assessment · ECR-R Scale',
+    introTitle: '关于本测评',
+    introP1: '本测评基于 <strong>ECR-R 亲密关系体验量表（修订版）</strong>，由 Fraley、Waller 与 Brennan 于 2000 年修订，是当前依恋研究中信效度最高的自评工具之一，被广泛应用于心理学研究与临床实践。',
+    introP2: '测评共 <strong>36 题</strong>，约需 <strong>8--12 分钟</strong>。请依据您在<em>亲密关系（包括恋爱、深度友谊等）</em>中的真实感受作答，没有对错之分。',
+    introP3: '测评结果仅供自我探索参考，不构成临床诊断。',
+    tag1: '📊 ECR-R 量表', tag2: '🔬 信效度验证', tag3: '36 题 · 约10分钟', tag4: '🔒 隐私保护',
+    btnStart: '开始测评 →',
+    coverWechat: '返回原公众号文章',
+    coverFooter: '本测评内容基于学术研究，仅供参考 · 数据不上传，完全在本地运行',
+    progressLabel: '答题进度',
+    labelDisagree: '非常不符合',
+    labelAgree: '非常符合',
+    btnPrev: '← 上一题',
+    btnNext: '下一题 →',
+    btnSubmit: '查看我的结果 →',
+    quizWechat: '返回原公众号文章',
+    sectionAnxiety: '焦虑维度',
+    sectionAvoidance: '回避维度',
+    qPrefix: '第',
+    qSuffix: '题',
+    anxietyLabel: '焦虑维度',
+    avoidanceLabel: '回避维度',
+    anxietySub: '/ 7.0 满分',
+    avoidanceSub: '/ 7.0 满分',
+    dimAnxietyName: '依恋焦虑',
+    dimAvoidanceName: '依恋回避',
+    dimAnxietyDesc: '对关系中被遗弃或不被爱的担忧程度',
+    dimAvoidanceDesc: '在亲密关系中对依赖他人的回避程度',
+    overviewTitle: '依恋模式解析',
+    strengthsTitle: '你的关系优势',
+    challengesTitle: '可能的挑战',
+    tipsTitle: '关系小建议',
+    saveNote: '请及时保存您的测评结果。此页面刷新后结果将消失，建议截图或点击下方按钮保存为文本文件。',
+    btnSave: '📥 保存测评结果',
+    btnShareResult: '🔗 分享我的结果',
+    btnShareAssess: '📋 分享这份测评给朋友',
+    btnRetake: '🔄 重新测评',
+    resultWechat: '返回原公众号文章',
+    footerText: '本测评基于 ECR-R 量表 · 结果仅供参考，不构成临床诊断',
+    toastSaved: '结果已保存为文本文件 ✓',
+    toastCopied: '内容已复制到剪贴板 ✓',
+    toastShareFailed: '请手动复制当前页面链接分享',
+    dimSectionLabel: { A: '焦虑维度', V: '回避维度' },
+    get questions() { return buildInterleavedQuestions(RAW_ZH); },
+    types: {
+      secure: {
+        name: '安全型依恋', en: 'Secure Attachment', icon: '🌿',
+        overview: [
+          '你展现出<strong>安全型依恋</strong>的特征----这是四种依恋类型中最有助于建立健康亲密关系的模式。',
+          '安全型依恋者通常在早年建立了稳固的情感基础，能够在亲密与独立之间取得良好的平衡。你大体上相信他人是可信赖的，也相信自己是值得被爱的。在关系中，你既能够给予温暖的支持，也能在需要时明确表达自身的需求。',
+          '研究表明（Mikulincer & Shaver, 2007），安全型个体在亲密关系中满意度更高、冲突解决能力更强、情绪调节也更为灵活。这并不意味着你没有挑战，而是你拥有一种内在资源，使你能更有弹性地应对关系中的困境。'
+        ],
+        strengths: [
+          '能够坦然表达需求与情感，沟通相对直接清晰',
+          '在亲密与独立之间能找到自然的平衡点',
+          '在关系遭遇冲突或困难时，不会轻易陷入极端反应',
+          '信任他人的能力较强，不易陷入过度猜疑',
+          '能够给予伴侣或亲密朋友稳定的情感支持'
+        ],
+        challenges: [
+          '可能会对他人的依恋需求感到不解，因为自己在这方面较为轻松',
+          '在面对高焦虑或高回避型伴侣时，可能会感到困惑或挫败',
+          '有时可能低估他人在亲密关系中的脆弱和需求'
+        ],
+        tips: [
+          { title: '保持觉察，珍惜这份安全感', body: '安全型依恋并非理所当然，它来自你内心的成长与学习。持续关注自己的情感状态，这份安全感就是你最珍贵的内在资源。' },
+          { title: '理解伴侣的不同依恋风格', body: '如果你的伴侣有更高的焦虑或回避倾向，尝试多了解依恋理论，用更多耐心去理解他们行为背后的深层需求，而非仅仅停留在表面。' },
+          { title: '持续滋养关系', body: '安全型的人有时会因为"关系感觉还不错"就减少对关系的用心投入。记得定期和重要的人分享内心，保持深度联结的流动。' },
+          { title: '用你的安全感帮助他人', body: '研究发现，安全型伴侣能够帮助焦虑型或回避型伴侣逐渐"习得安全"。你的稳定与温暖，本身就是一种疗愈的力量。' },
+        ],
+        closing: '无论测评结果如何，你的故事都是独一无二的。安全感不是一成不变的状态，它可以在生命中不断被发展与深化。愿你继续带着好奇与温柔，探索自己内心的那片风景----那里永远值得被温柔以待。🌿'
+      },
+      anxious: {
+        name: '焦虑型依恋', en: 'Anxious Attachment', icon: '🌊',
+        overview: [
+          '你的测评结果显示出<strong>焦虑型依恋</strong>的特征----这是一种在亲密关系中倾向于高度渴望联结、同时容易担忧失去的依恋模式。',
+          '焦虑型依恋通常与早期照顾者的回应不一致有关----时而温暖亲近，时而疏远冷漠，使孩子学会了通过"更强烈地表达需求"来试图维系联结。这不是你的错，而是你的内心发展出的一种聪明的应对策略。',
+          '在成年关系中，这种模式表现为：对亲密的强烈渴望、对被抛弃的深切恐惧、在关系中情绪波动较大。研究（Mikulincer & Shaver, 2016）显示，焦虑型个体的情感感知能力往往极为丰富----这同时也是你的一种天赋。'
+        ],
+        strengths: [
+          '情感感知细腻，能深刻体会他人的情绪状态',
+          '对关系充满热情和投入，愿意付出大量情感资源',
+          '善于表达情感，伴侣通常能清楚感受到你的爱',
+          '对关系中的细微变化非常敏感，有助于及时捕捉问题',
+          '强烈渴望深度联结，能够建立极具意义感的关系'
+        ],
+        challenges: [
+          '容易将他人的情绪或言行过度内化，认为是针对自己',
+          '在感到被忽视或疏远时，可能采取"追逐"行为，有时反而会推远对方',
+          '情绪波动较大，关系中的不确定性可能引发较强的焦虑反应',
+          '自我价值感有时依附于对方的认可与回应',
+          '过度揣测他人的想法与意图，内心负担较重'
+        ],
+        tips: [
+          { title: '建立内在的安全感', body: '尝试发展与自己的联结，探索让自己感到平静和踏实的事物（比如冥想、写日记、艺术创作）。内在的稳定感可以减少对外部确认的依赖。' },
+          { title: '学习识别焦虑的触发点', body: '当焦虑来临时，先问自己："这种感受是对眼前实际情况的反应，还是内心旧日模式的声音？"区分当下现实与内心投射，能帮助你更清晰地回应。' },
+          { title: '练习直接、温和地表达需求', body: '当你渴望联结时，尝试用"我感到……我希望……"的方式直接表达，而非通过间接行为来测试对方。清晰的表达往往比"试探"更有效。' },
+          { title: '给自己和关系留有呼吸的空间', body: '亲密不等于融合。尝试培养自己的兴趣爱好和社交圈，不把所有情感需求都集中在一段关系上----这不仅对你有益，也会让关系更健康。' },
+        ],
+        closing: '高度的情感敏感并非缺陷，它是你对世界感知深度的体现。那些曾经让你感到不安全的经历，已经教会了你如何深刻地感受爱。现在，你正在学习的，是如何在爱中也感到安全。这条路或许需要时间，但你已经走在了正确的方向上。愿你温柔地对待内心那个渴望被爱的自己，她/他值得被深深地看见与拥抱。🌊'
+      },
+      avoidant: {
+        name: '回避型依恋', en: 'Dismissing Avoidant', icon: '🍃',
+        overview: [
+          '你的测评结果呈现出<strong>回避型依恋（疏离型）</strong>的特征----这是一种在亲密关系中倾向于保持情感距离、重视独立的依恋模式。',
+          '回避型依恋通常与早期照顾者较少回应情感需求有关----孩子学会了"不麻烦别人、靠自己"，将依赖的需求深藏起来。这是一种适应环境的智慧，只是在成年关系中，它有时会阻隔你体验更深度的联结。',
+          '研究（Fraley & Shaver, 2000）表明，回避型个体通常有较高的自我效能感和问题解决能力，独立性极强。同时，他们也具有情感需求，只是这些需求被放在了更深的地方，不容易被察觉。'
+        ],
+        strengths: [
+          '独立自主，能够很好地自我管理和照顾自己',
+          '在关系压力下通常能保持冷静，不容易情绪失控',
+          '善于逻辑思考，不被过度情绪化所左右',
+          '有清晰的个人边界感，不轻易被他人影响',
+          '在压力情境下往往表现出较高的问题解决能力'
+        ],
+        challenges: [
+          '在他人需要情感支持时，可能感到不知所措或想要退缩',
+          '亲密关系中容易感到被"侵入"或"消耗"，进而拉开距离',
+          '有时难以识别和表达自己真实的情感状态',
+          '伴侣可能感受到情感上的距离或"触不到你"',
+          '情感需求有时被压抑过久，可能以其他方式（如躯体化）显现'
+        ],
+        tips: [
+          { title: '慢慢练习情感"打开"的能力', body: '尝试每天找一个小小的机会，分享自己真实的感受----哪怕是"今天有点累"或"这件事让我很开心"。情感表达是可以慢慢学习的技能，不需要一蹴而就。' },
+          { title: '留意"退缩冲动"出现的时刻', body: '当你感到想要逃离某段联结时，先暂停一下，问问自己：这是真的需要空间，还是习惯性的防御？有时候，留下来承受一点不适，会带来意外的收获。' },
+          { title: '向伴侣解释你的需要', body: '告诉重要的人："我需要一些个人空间"并不等于"我不在乎你"。清晰地沟通你对独立的需要，同时让对方感受到你的在乎，可以大大减少误解。' },
+          { title: '探索自己被压抑的情感层面', body: '日记写作、艺术创作、甚至心理咨询，都是帮助你与内心情感世界重新建立联系的好方式。那些被藏起来的情感，也是你真实自我的一部分。' },
+        ],
+        closing: '独立与坚强，是你走过一段岁月后磨砺出的品质。只是，真正的力量从来不排斥柔软----它包含了可以在需要时靠近他人、被看见、被承托的能力。你不必放下那份独立，只需在那份独立中，为联结留一扇门。愿你慢慢发现，开放自己，并不会失去你。🍃'
+      },
+      fearful: {
+        name: '恐惧型依恋', en: 'Fearful Avoidant', icon: '🌙',
+        overview: [
+          '你的测评结果显示出<strong>恐惧型依恋（矛盾回避型）</strong>的特征----这是一种同时高度渴望亲密、又对亲密感到恐惧的依恋模式，常常伴随着矛盾的内心体验。',
+          '恐惧型依恋通常与早期经历中较多的伤害、忽视或不可预测的照顾有关----亲近的人同时也是让你感到不安全的人。于是，内心形成了"我想要靠近，但靠近是危险的"这样矛盾的图式。',
+          '这种模式在所有依恋类型中通常体验最为复杂，但也蕴含着极深的情感体验能力与内省潜力（Main & Hesse, 1990）。许多具有高度同理心和创造力的人，有着类似的内心世界。'
+        ],
+        strengths: [
+          '情感体验极为丰富和深刻，能理解人类关系的复杂性',
+          '具有较高的自我反思能力，内省能力强',
+          '对他人痛苦有深切的共情，善解人意',
+          '在经历过挣扎之后，往往能发展出深刻的智慧',
+          '渴望真实的联结，对关系的感受是真挚且深入的'
+        ],
+        challenges: [
+          '在亲密关系中常常体验到"想靠近又想逃离"的矛盾张力',
+          '容易在情感高度卷入时突然想退出或切断关系',
+          '可能在关系中呈现出让对方困惑的行为模式（时冷时热）',
+          '有时难以信任他人，即便心里渴望被信任',
+          '情绪调节可能是一个需要持续练习的方面'
+        ],
+        tips: [
+          { title: '认识"矛盾"是你内心的保护', body: '那个想靠近又想逃跑的部分，是你的内心在试图同时保护你和满足你。尝试以慈悲的眼光看待这个矛盾，而不是评判自己"怎么又这样了"。' },
+          { title: '寻求安全稳定的关系环境', body: '在相对安全、稳定、有边界的关系中，恐惧型依恋有机会被慢慢"疗愈"。如果你身边有这样的人，珍视那份联结，允许自己慢慢相信。' },
+          { title: '情绪调节是可以学习的技能', body: '当矛盾情绪涌现时，尝试"命名情绪"（"我现在感到恐惧和渴望同时存在"）----这个简单的动作能激活大脑的理性区域，帮助你稳定下来。' },
+          { title: '考虑心理咨询的支持', body: '恐惧型依恋通常有较深的早期创伤根源，专业的心理咨询（尤其是创伤知情的方法，如 EMDR、依恋为本的咨询）能够提供深度的支持与疗愈。' },
+        ],
+        closing: '你内心那个同时渴望爱又害怕爱的部分，不是弱点，而是你曾经经历过的见证。每一次在恐惧中仍然选择靠近，每一次在想逃离时仍然留了下来，都是你勇气的体现。你不需要马上"好起来"，也不需要假装没有挣扎。愿你在自己的节奏里，慢慢发现：有些人，是真的可以信任的；而你，永远值得被温柔对待。🌙'
+      }
+    }
+  },
+  en: {
+    brand: 'Attachment Style Assessment',
+    coverTitle: 'Attachment Style Assessment',
+    coverSubtitle: 'ECR-R Scale · Based on Fraley, Waller & Brennan (2000)',
+    introTitle: 'About This Assessment',
+    introP1: 'This assessment is based on the <strong>ECR-R (Experiences in Close Relationships -- Revised)</strong>, developed by Fraley, Waller, and Brennan in 2000. It is one of the most widely validated self-report measures of adult attachment in psychological research and clinical practice.',
+    introP2: '<strong>36 items</strong>, approximately <strong>8--12 minutes</strong>. Please answer based on how you genuinely feel in <em>close relationships (romantic or deep friendships)</em>. There are no right or wrong answers.',
+    introP3: 'Results are for self-reflection only and do not constitute clinical diagnosis.',
+    tag1: '📊 ECR-R Scale', tag2: '🔬 Validated', tag3: '36 items · ~10 min', tag4: '🔒 Private',
+    btnStart: 'Begin Assessment →',
+    coverWechat: 'Back to WeChat Article',
+    coverFooter: 'Based on academic research · Data stays local, never uploaded',
+    progressLabel: 'Progress',
+    labelDisagree: 'Strongly Disagree',
+    labelAgree: 'Strongly Agree',
+    btnPrev: '← Previous',
+    btnNext: 'Next →',
+    btnSubmit: 'See My Results →',
+    quizWechat: 'Back to WeChat Article',
+    sectionAnxiety: 'Anxiety',
+    sectionAvoidance: 'Avoidance',
+    qPrefix: 'Q',
+    qSuffix: '',
+    anxietyLabel: 'Anxiety',
+    avoidanceLabel: 'Avoidance',
+    anxietySub: '/ 7.0 max',
+    avoidanceSub: '/ 7.0 max',
+    dimAnxietyName: 'Attachment Anxiety',
+    dimAvoidanceName: 'Attachment Avoidance',
+    dimAnxietyDesc: 'Worry about abandonment or not being loved',
+    dimAvoidanceDesc: 'Discomfort with closeness and depending on others',
+    overviewTitle: 'Your Attachment Style',
+    strengthsTitle: 'Your Relational Strengths',
+    challengesTitle: 'Possible Challenges',
+    tipsTitle: 'Gentle Suggestions',
+    saveNote: 'Please save your results promptly. Refreshing the page will erase them. Use the save button below to download as a text file.',
+    btnSave: '📥 Save My Results',
+    btnShareResult: '🔗 Share My Results',
+    btnShareAssess: '📋 Share This Assessment',
+    btnRetake: '🔄 Retake Assessment',
+    resultWechat: 'Back to WeChat Article',
+    footerText: 'Based on ECR-R Scale · For self-reflection only, not clinical diagnosis',
+    toastSaved: 'Results saved as text file ✓',
+    toastCopied: 'Copied to clipboard ✓',
+    toastShareFailed: 'Please copy the page URL manually to share',
+    dimSectionLabel: { A: 'Anxiety Dimension', V: 'Avoidance Dimension' },
+    get questions() { return buildInterleavedQuestions(RAW_EN); },
+    types: {
+      secure: {
+        name: 'Secure Attachment', en: 'Secure Attachment', icon: '🌿',
+        overview: [
+          'Your results reflect the characteristics of <strong>Secure Attachment</strong>--the pattern most conducive to healthy, fulfilling close relationships.',
+          'Securely attached individuals typically built a stable emotional foundation early in life, allowing them to balance closeness and independence with relative ease. You generally trust others and believe you are worthy of love. In relationships, you can offer warm support while also communicating your own needs clearly.',
+          'Research shows (Mikulincer & Shaver, 2007) that securely attached individuals tend to report higher relationship satisfaction, more effective conflict resolution, and greater emotional flexibility. This doesn\'t mean you have no challenges--it means you have inner resources that help you navigate them.'
+        ],
+        strengths: [
+          'Able to express needs and emotions openly, with relatively direct communication',
+          'Naturally finds balance between closeness and personal space',
+          'Doesn\'t easily fall into extreme reactions during conflict or difficulty',
+          'Strong ability to trust others without excessive suspicion',
+          'Provides consistent emotional support to partners and close friends'
+        ],
+        challenges: [
+          'May not fully understand the level of relational anxiety others experience',
+          'Can feel confused or frustrated when partnering with highly anxious or avoidant individuals',
+          'May occasionally underestimate others\' vulnerability and emotional needs'
+        ],
+        tips: [
+          { title: 'Cherish and tend to this security', body: 'Secure attachment isn\'t something to take for granted--it reflects genuine growth and learning. Keep checking in with your own emotional state. This inner security is your most valuable resource.' },
+          { title: 'Learn about different attachment styles', body: 'If your partner shows high anxiety or avoidance, exploring attachment theory can help you respond with more patience and understanding--seeing the unmet need beneath the behavior.' },
+          { title: 'Keep nurturing your relationships', body: 'Securely attached people sometimes invest less when things "feel fine." Remember to regularly share your inner world with those you love--depth of connection needs tending.' },
+          { title: 'Your steadiness is healing for others', body: 'Research shows that secure partners can help anxious or avoidant individuals gradually develop "earned security." Your calm, warmth, and reliability are a quiet form of care.' },
+        ],
+        closing: 'Whatever your result, your story is uniquely yours. Security is not a fixed destination--it can deepen and grow throughout your life. May you continue exploring your inner landscape with curiosity and tenderness. That landscape will always be worth being gently known. 🌿'
+      },
+      anxious: {
+        name: 'Anxious Attachment', en: 'Anxious--Preoccupied', icon: '🌊',
+        overview: [
+          'Your results reflect the characteristics of <strong>Anxious Attachment</strong>--a pattern in which you deeply crave closeness while also frequently worrying about losing it.',
+          'Anxious attachment often develops when early caregivers were inconsistent--sometimes warm and available, other times distant or unpredictable. In response, you learned to signal your needs more intensely to try to maintain connection. This is not a flaw; it was an intelligent adaptation to an uncertain environment.',
+          'In adult relationships, this pattern often appears as: intense longing for closeness, deep fear of abandonment, and heightened emotional reactivity in relationships. Research (Mikulincer & Shaver, 2016) also shows that anxiously attached individuals often have a rich capacity for emotional sensitivity--a genuine gift alongside the challenges.'
+        ],
+        strengths: [
+          'Emotionally perceptive and attuned to others\' feelings',
+          'Passionately invested in relationships, willing to give deeply',
+          'Expressive with feelings--partners can usually feel your love clearly',
+          'Highly sensitive to relational dynamics, often catching issues early',
+          'Deeply motivated by meaningful connection--your relationships can be profound'
+        ],
+        challenges: [
+          'May internalize others\' moods or behavior as a reflection of your own worth',
+          'May "pursue" when feeling distance, which can sometimes have the opposite effect',
+          'Emotional swings can be intense when relationship uncertainty arises',
+          'Self-worth can become tied to the other person\'s responsiveness',
+          'Tendency to over-analyze and worry about others\' intentions'
+        ],
+        tips: [
+          { title: 'Build internal security', body: 'Explore what helps you feel grounded within yourself--meditation, journaling, creative expression. Inner stability reduces the need for constant external reassurance.' },
+          { title: 'Distinguish present reality from old patterns', body: 'When anxiety rises, gently ask yourself: "Is this responding to what\'s actually happening, or is it an echo of older fears?" That distinction is often clarifying.' },
+          { title: 'Practice clear, direct expression', body: 'When you want closeness, try saying "I feel… and I\'d love…" rather than testing indirectly. Direct expression is often more effective--and less exhausting--than hinting.' },
+          { title: 'Cultivate your own world', body: 'Develop interests, friendships, and pursuits beyond any single relationship. This isn\'t about caring less--it\'s about not concentrating all your emotional weight in one place. Both you and the relationship benefit.' },
+        ],
+        closing: 'Profound emotional sensitivity is not a defect--it\'s the depth of how you experience the world. The experiences that taught you to feel uncertain also taught you to love with remarkable intensity. Now you\'re learning to feel safe while loving. That takes time, and you\'re already on the path. May you hold that tender, love-seeking part of yourself with great kindness--she/he deserves to be seen and held with care. 🌊'
+      },
+      avoidant: {
+        name: 'Avoidant Attachment', en: 'Dismissing--Avoidant', icon: '🍃',
+        overview: [
+          'Your results reflect the characteristics of <strong>Dismissing Avoidant Attachment</strong>--a pattern in which you tend to prioritize independence and maintain emotional distance in close relationships.',
+          'Avoidant attachment commonly develops when early caregivers were consistently emotionally unavailable or unresponsive. You learned that depending on others wasn\'t reliable, so you became self-sufficient and learned to suppress attachment needs. This was a wise adaptation--but in adult relationships, it can sometimes create distance you don\'t entirely intend.',
+          'Research (Fraley & Shaver, 2000) shows that avoidantly attached individuals often have strong self-efficacy and problem-solving capabilities. Crucially, their emotional needs are present--they are simply held at a deeper, less accessible level.'
+        ],
+        strengths: [
+          'Highly self-sufficient--able to care for yourself with skill',
+          'Tends to stay calm under relational pressure, not easily overwhelmed',
+          'Logical and clear-headed, not swayed by excessive emotionality',
+          'Has a clear sense of personal boundaries',
+          'Strong problem-solving skills, especially in high-stakes situations'
+        ],
+        challenges: [
+          'May feel lost or want to withdraw when others need emotional support',
+          'Can feel "invaded" or "drained" by closeness, leading to increased distance',
+          'Sometimes difficult to recognize or articulate your own emotional states',
+          'Partners may feel an emotional wall or sense they can\'t fully reach you',
+          'Suppressed emotional needs may eventually emerge in other ways'
+        ],
+        tips: [
+          { title: 'Practice small emotional openings', body: 'Try sharing one genuine feeling each day--even something simple like "I\'m a bit tired today" or "that made me happy." Emotional expression is a learnable skill, developed gradually.' },
+          { title: 'Notice the withdrawal impulse', body: 'When you feel the urge to pull back from connection, pause and ask: Do I genuinely need space right now, or is this a habitual defense? Sometimes staying present through mild discomfort opens something new.' },
+          { title: 'Communicate your need for space clearly', body: 'Telling someone "I need some time alone" is not the same as "I don\'t care about you." When you name your need for independence while also conveying care, you can prevent a lot of misunderstanding.' },
+          { title: 'Explore your emotional inner world', body: 'Journaling, art, or therapy can help you reconnect with the emotional landscape you\'ve kept at arm\'s length. Those feelings are a real part of who you are--and they have things to tell you.' },
+        ],
+        closing: 'Independence and self-reliance are real strengths, shaped by real experience. And true strength has never been at odds with softness--it includes the capacity to move closer when you want to, to be seen, and to lean. You don\'t have to let go of your independence. You only have to leave one door open for connection. May you find, slowly, that opening yourself doesn\'t mean losing yourself. 🍃'
+      },
+      fearful: {
+        name: 'Fearful Avoidant', en: 'Fearful--Avoidant', icon: '🌙',
+        overview: [
+          'Your results reflect the characteristics of <strong>Fearful Avoidant Attachment</strong>--a pattern in which you simultaneously yearn for closeness and feel frightened by it, often leading to deeply conflicted inner experiences.',
+          'Fearful avoidant attachment often develops when early caregivers were sources of both comfort and fear--when the people you needed most were also unpredictable, harmful, or unavailable. The mind learned: "I need closeness, but closeness is dangerous."',
+          'This is among the most complex attachment patterns to live with, but it also carries deep emotional capacity and reflective potential (Main & Hesse, 1990). Many highly empathic, introspective people share this inner landscape--and with the right support, meaningful growth is not only possible, it\'s common.'
+        ],
+        strengths: [
+          'Exceptionally rich emotional experience and understanding of relational complexity',
+          'Strong capacity for self-reflection and insight',
+          'Deep empathy for others\' pain and emotional experience',
+          'Often develops profound wisdom through navigating difficulty',
+          'Craves authentic connection--when felt, it is real and meaningful'
+        ],
+        challenges: [
+          'May experience constant internal tension between wanting closeness and fearing it',
+          'May disengage or withdraw suddenly when emotional intensity rises',
+          'Can present as alternating hot and cold, confusing to partners',
+          'Trusting others can feel genuinely difficult, even when yearning to',
+          'Emotional regulation is often an ongoing area of growth'
+        ],
+        tips: [
+          { title: 'See the conflict as protection, not dysfunction', body: 'The part of you that wants to run toward and away from love at the same time is trying to keep you safe while also honoring your needs. Meet this contradiction with compassion, not judgment.' },
+          { title: 'Seek steady, safe relationships', body: 'In relationships with consistent, boundaried, predictable people, fearful avoidant patterns have the chance to slowly heal. If you have such people around you, allow yourself to trust them--gradually.' },
+          { title: 'Learn to name your emotions in the moment', body: 'When conflicting emotions surge, try labeling them: "Right now I feel both scared and wanting to connect." Naming activates the brain\'s rational centers and can help you stabilize.' },
+          { title: 'Consider professional support', body: 'Fearful avoidant attachment often has roots in earlier trauma. Trauma-informed approaches--like EMDR, somatic therapy, or attachment-based counseling--can offer profound healing that goes beyond what self-help alone can reach.' },
+        ],
+        closing: 'That part of you that simultaneously wants love and fears it is not broken--it is bearing witness to what you have lived through. Every time you chose to stay when fear said run, every time you reached toward connection despite the risk--that was courage. You don\'t have to heal on anyone else\'s timeline. You don\'t have to pretend the struggle isn\'t real. May you find, slowly and in your own way, that some people are safe to trust--and that you, always and without condition, deserve to be held with gentleness. 🌙'
+      }
+    }
+  }
+};
+
+// =====================================================
+//  STATE
+// =====================================================
+let currentLang = 'zh';
+let currentQ = 0;
+let answers = new Array(36).fill(null);
+let resultData = null;
+
+// =====================================================
+//  LANGUAGE
+// =====================================================
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+  updateUI();
+}
+
+function t(key) { return LANG[currentLang][key]; }
+
+function updateUI() {
+  const L = LANG[currentLang];
+  document.getElementById('brand-text').textContent = L.brand;
+  document.getElementById('cover-title').textContent = L.coverTitle;
+  document.getElementById('cover-subtitle').textContent = L.coverSubtitle;
+  document.getElementById('intro-title').textContent = L.introTitle;
+  document.getElementById('intro-p1').innerHTML = L.introP1;
+  document.getElementById('intro-p2').innerHTML = L.introP2;
+  document.getElementById('intro-p3').textContent = L.introP3;
+  document.getElementById('tag1').textContent = L.tag1;
+  document.getElementById('tag2').textContent = L.tag2;
+  document.getElementById('tag3').textContent = L.tag3;
+  document.getElementById('tag4').textContent = L.tag4;
+  document.getElementById('btn-start-text').textContent = L.btnStart;
+  document.getElementById('cover-wechat-text').textContent = L.coverWechat;
+  document.getElementById('cover-footer').textContent = L.coverFooter;
+
+  document.getElementById('label-disagree').textContent = L.labelDisagree;
+  document.getElementById('label-agree').textContent = L.labelAgree;
+  document.getElementById('quiz-wechat-text').textContent = L.quizWechat;
+
+  document.getElementById('dim-anxiety-name').textContent = L.dimAnxietyName;
+  document.getElementById('dim-avoidance-name').textContent = L.dimAvoidanceName;
+  document.getElementById('dim-anxiety-desc').textContent = L.dimAnxietyDesc;
+  document.getElementById('dim-avoidance-desc').textContent = L.dimAvoidanceDesc;
+  document.getElementById('anxiety-label').textContent = L.anxietyLabel;
+  document.getElementById('avoidance-label').textContent = L.avoidanceLabel;
+  document.getElementById('anxiety-sub').textContent = L.anxietySub;
+  document.getElementById('avoidance-sub').textContent = L.avoidanceSub;
+  document.getElementById('section-overview-title').textContent = L.overviewTitle;
+  document.getElementById('section-strengths-title').textContent = L.strengthsTitle;
+  document.getElementById('section-challenges-title').textContent = L.challengesTitle;
+  document.getElementById('section-tips-title').textContent = L.tipsTitle;
+  document.getElementById('save-note-text').textContent = L.saveNote;
+  document.getElementById('btn-save-text').textContent = L.btnSave;
+  document.getElementById('btn-share-result-text').textContent = L.btnShareResult;
+  document.getElementById('btn-share-assess-text').textContent = L.btnShareAssess;
+  document.getElementById('btn-retake-text').textContent = L.btnRetake;
+  document.getElementById('result-wechat-text').textContent = L.resultWechat;
+  document.getElementById('footer-text').textContent = L.footerText;
+  document.getElementById('progress-label').textContent = L.progressLabel;
+
+  if (document.getElementById('page-quiz').style.display !== 'none') {
+    renderQuestion();
+  }
+  if (document.getElementById('page-result').style.display !== 'none' && resultData) {
+    renderResult(resultData.anxiety, resultData.avoidance);
+  }
+}
+
+// =====================================================
+//  QUIZ
+// =====================================================
+function startQuiz() {
+  document.getElementById('page-cover').style.display = 'none';
+  document.getElementById('page-quiz').style.display = 'block';
+  currentQ = 0;
+  renderQuestion();
+  window.scrollTo(0, 0);
+}
+
+function renderQuestion() {
+  const L = LANG[currentLang];
+  const qs = L.questions;
+  const q = qs[currentQ];
+  const total = qs.length;
+
+  document.getElementById('progress-num').textContent = `${currentQ + 1} / ${total}`;
+  document.getElementById('progress-fill').style.width = `${((currentQ + 1) / total) * 100}%`;
+
+  // Show which dimension this question belongs to
+  const sLabel = L.dimSectionLabel[q.dim];
+  document.getElementById('q-section-label').textContent = sLabel;
+
+  const prefix = L.qPrefix;
+  const suffix = L.qSuffix;
+  document.getElementById('q-number').textContent = currentLang === 'zh'
+    ? `${prefix} ${currentQ + 1} ${suffix}`
+    : `${prefix}${currentQ + 1}`;
+  document.getElementById('q-text').textContent = q.text;
+
+  // Options
+  const grid = document.getElementById('options-grid');
+  grid.innerHTML = '';
+  for (let i = 1; i <= 7; i++) {
+    const btn = document.createElement('button');
+    const isSelected = answers[currentQ] === i;
+    btn.className = 'option-btn' + (isSelected ? ' selected' : '');
+    btn.onclick = () => selectAnswer(i);
+    btn.innerHTML = `<div class="option-dot">${isSelected ? '✓' : ''}</div><span class="option-score">${i}</span>`;
+    grid.appendChild(btn);
+  }
+
+  // Prev/Next
+  const prevBtn = document.getElementById('btn-prev');
+  const nextBtn = document.getElementById('btn-next');
+  prevBtn.style.display = currentQ === 0 ? 'none' : 'block';
+  prevBtn.textContent = L.btnPrev;
+
+  if (currentQ === total - 1) {
+    nextBtn.textContent = L.btnSubmit;
+  } else {
+    nextBtn.textContent = L.btnNext;
+  }
+}
+
+function selectAnswer(val) {
+  answers[currentQ] = val;
+  const btns = document.querySelectorAll('.option-btn');
+  btns.forEach((btn, idx) => {
+    const score = idx + 1;
+    const sel = score === val;
+    btn.className = 'option-btn' + (sel ? ' selected' : '');
+    btn.innerHTML = `<div class="option-dot">${sel ? '✓' : ''}</div><span class="option-score">${score}</span>`;
+  });
+  // Auto advance after short delay (skip on last question)
+  const qs = LANG[currentLang].questions;
+  setTimeout(() => {
+    if (currentQ < qs.length - 1) {
+      nextQ();
+    }
+  }, 320);
+}
+
+function nextQ() {
+  const qs = LANG[currentLang].questions;
+  if (answers[currentQ] === null) {
+    showToast(currentLang === 'zh' ? '请先选择一个选项 ✦' : 'Please select an option first ✦');
+    return;
+  }
+  if (currentQ === qs.length - 1) {
+    calculateResult();
+  } else {
+    currentQ++;
+    renderQuestion();
+    window.scrollTo(0, 80);
+  }
+}
+
+function prevQ() {
+  if (currentQ > 0) {
+    currentQ--;
+    renderQuestion();
+    window.scrollTo(0, 80);
+  }
+}
+
+// =====================================================
+//  SCORING  (ECR-R: dimension tracked per question)
+// =====================================================
+function calculateResult() {
+  const qs = LANG[currentLang].questions;
+  let anxSum = 0, avoSum = 0;
+  let anxCount = 0, avoCount = 0;
+
+  for (let i = 0; i < qs.length; i++) {
+    const q = qs[i];
+    let score = answers[i];
+    if (q.reverse) score = 8 - score;
+    if (q.dim === 'A') { anxSum += score; anxCount++; }
+    else { avoSum += score; avoCount++; }
+  }
+
+  const anxiety = +(anxSum / anxCount).toFixed(2);
+  const avoidance = +(avoSum / avoCount).toFixed(2);
+
+  // Classify: threshold 3.5 (ECR-R standard midpoint)
+  const threshold = 3.5;
+  let type;
+  if (anxiety < threshold && avoidance < threshold) type = 'secure';
+  else if (anxiety >= threshold && avoidance < threshold) type = 'anxious';
+  else if (anxiety < threshold && avoidance >= threshold) type = 'avoidant';
+  else type = 'fearful';
+
+  resultData = { anxiety, avoidance, type };
+  renderResult(anxiety, avoidance);
+}
+
+function renderResult(anxiety, avoidance) {
+  const L = LANG[currentLang];
+  const type = resultData.type;
+  const typeData = L.types[type];
+
+  document.getElementById('page-quiz').style.display = 'none';
+  document.getElementById('page-cover').style.display = 'none';
+  document.getElementById('page-result').style.display = 'block';
+
+  document.getElementById('result-icon').textContent = typeData.icon;
+  document.getElementById('result-type-name').textContent = typeData.name;
+  document.getElementById('result-type-en').textContent = typeData.en;
+
+  document.getElementById('anxiety-score').textContent = anxiety.toFixed(1);
+  document.getElementById('avoidance-score').textContent = avoidance.toFixed(1);
+
+  // Bars
+  setTimeout(() => {
+    document.getElementById('dim-anxiety-fill').style.width = `${(anxiety / 7) * 100}%`;
+    document.getElementById('dim-avoidance-fill').style.width = `${(avoidance / 7) * 100}%`;
+  }, 100);
+  document.getElementById('dim-anxiety-val').textContent = anxiety.toFixed(1);
+  document.getElementById('dim-avoidance-val').textContent = avoidance.toFixed(1);
+
+  // Overview
+  const overviewEl = document.getElementById('result-overview-content');
+  overviewEl.innerHTML = typeData.overview.map(p => `<p>${p}</p>`).join('');
+
+  // Strengths
+  const strEl = document.getElementById('result-strengths-list');
+  strEl.innerHTML = typeData.strengths.map(s => `<li>${s}</li>`).join('');
+
+  // Challenges
+  const chalEl = document.getElementById('result-challenges-list');
+  chalEl.innerHTML = typeData.challenges.map(c => `<li>${c}</li>`).join('');
+
+  // Tips
+  const tipsEl = document.getElementById('result-tips-grid');
+  tipsEl.innerHTML = typeData.tips.map(tip => `
+    <div class="tip-item">
+      <strong>${tip.title}</strong>
+      ${tip.body}
+    </div>
+  `).join('');
+
+  // Closing
+  document.getElementById('closing-text').textContent = typeData.closing;
+
+  window.scrollTo(0, 0);
+}
+
+// =====================================================
+//  ACTIONS
+// =====================================================
+function saveResult() {
+  if (!resultData) return;
+  const L = LANG[currentLang];
+  const typeData = L.types[resultData.type];
+
+  const content = `
+${typeData.icon} ${currentLang === 'zh' ? '依恋模式心理测评结果' : 'Attachment Style Assessment Results'}
+${'='.repeat(40)}
+
+${currentLang === 'zh' ? '你的依恋类型' : 'Your Type'}: ${typeData.name} (${typeData.en})
+${currentLang === 'zh' ? '焦虑维度' : 'Anxiety'}: ${resultData.anxiety.toFixed(1)} / 7.0
+${currentLang === 'zh' ? '回避维度' : 'Avoidance'}: ${resultData.avoidance.toFixed(1)} / 7.0
+
+${L.overviewTitle}
+${'-'.repeat(30)}
+${typeData.overview.map(p => p.replace(/<[^>]+>/g, '')).join('\n\n')}
+
+${L.strengthsTitle}
+${'-'.repeat(30)}
+${typeData.strengths.map((s, i) => `${i + 1}. ${s}`).join('\n')}
+
+${L.challengesTitle}
+${'-'.repeat(30)}
+${typeData.challenges.map((c, i) => `${i + 1}. ${c}`).join('\n')}
+
+${L.tipsTitle}
+${'-'.repeat(30)}
+${typeData.tips.map(tip => `【${tip.title}】\n${tip.body}`).join('\n\n')}
+
+${currentLang === 'zh' ? '结语' : 'Closing'}
+${'-'.repeat(30)}
+${typeData.closing}
+
+${'='.repeat(40)}
+${currentLang === 'zh' ? '测评基于 ECR-R 量表 · 仅供参考，不构成临床诊断' : 'Based on ECR-R Scale · For self-reflection only, not clinical diagnosis'}
+${currentLang === 'zh' ? '公众号文章' : 'Original Article'}: https://mp.weixin.qq.com/s/uhKKOpjukGIFGDobLIK0QQ
+`.trim();
+
+  const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = currentLang === 'zh'
+    ? `依恋模式测评结果_${typeData.name}.txt`
+    : `Attachment_Assessment_${typeData.en.replace(/\s+/g, '_')}.txt`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  showToast(t('toastSaved'));
+}
+
+function shareResult() {
+  if (!resultData) return;
+  const L = LANG[currentLang];
+  const typeData = L.types[resultData.type];
+  const text = currentLang === 'zh'
+    ? `我的依恋模式测评结果：${typeData.icon} ${typeData.name}\n焦虑维度：${resultData.anxiety.toFixed(1)}/7.0 | 回避维度：${resultData.avoidance.toFixed(1)}/7.0\n\n来自：https://mp.weixin.qq.com/s/uhKKOpjukGIFGDobLIK0QQ`
+    : `My attachment style: ${typeData.icon} ${typeData.name}\nAnxiety: ${resultData.anxiety.toFixed(1)}/7.0 | Avoidance: ${resultData.avoidance.toFixed(1)}/7.0\n\nVia: https://mp.weixin.qq.com/s/uhKKOpjukGIFGDobLIK0QQ`;
+
+  if (navigator.share) {
+    navigator.share({ title: typeData.name, text: text, url: window.location.href })
+      .catch(() => copyToClipboard(text));
+  } else {
+    copyToClipboard(text);
+  }
+}
+
+function shareAssessment() {
+  const url = window.location.href;
+  const text = currentLang === 'zh'
+    ? `推荐你做一份专业的依恋模式测评，基于 ECR-R 量表，约10分钟，蛮准的！\n${url}`
+    : `Here's a professional attachment style assessment (ECR-R based, ~10 min) -- highly recommend!\n${url}`;
+
+  if (navigator.share) {
+    navigator.share({
+      title: currentLang === 'zh' ? '依恋模式心理测评' : 'Attachment Style Assessment',
+      text: text,
+      url: url
+    }).catch(() => copyToClipboard(text));
+  } else {
+    copyToClipboard(text);
+  }
+}
+
+function copyToClipboard(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text)
+      .then(() => showToast(t('toastCopied')))
+      .catch(() => showToast(t('toastShareFailed')));
+  } else {
+    // Fallback for older browsers
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    try {
+      document.execCommand('copy');
+      showToast(t('toastCopied'));
+    } catch (e) {
+      showToast(t('toastShareFailed'));
+    }
+    document.body.removeChild(ta);
+  }
+}
+
+function retakeQuiz() {
+  answers = new Array(36).fill(null);
+  currentQ = 0;
+  resultData = null;
+  document.getElementById('page-result').style.display = 'none';
+  document.getElementById('page-quiz').style.display = 'none';
+  document.getElementById('page-cover').style.display = 'block';
+  // Reset progress bar
+  document.getElementById('progress-fill').style.width = '2.7%';
+  window.scrollTo(0, 0);
+}
+
+// =====================================================
+//  TOAST
+// =====================================================
+function showToast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2500);
+}
+
+// Init
+updateUI();
+</script>
+</body>
+</html>
